@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>if(sessionStorage.getItem('tpkNav')==='1'){document.documentElement.classList.add('nav-arrival');if(sessionStorage.getItem('tpkNavLight')==='1'){document.documentElement.classList.add('nav-light');}}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — TPK Zavod</title>
+<meta name="description" content="Slavonska avenija 20, 10000 Zagreb, Croatia. Phone +385 1 2409 628. Email tpk-zavod@tpk-zavod.hr.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="media/Logo.ico" type="image/x-icon">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.css">
+</head>
+<body>
+<script>document.body.className = 'lang-' + (localStorage.getItem('tpkLang') || 'en');</script>
+<div id="scroll-progress"></div>
+<div id="cursor-dot"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(0 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(45 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(90 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(135 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(180 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(225 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(270 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(315 12 12)" fill="currentColor"/>
+  <circle cx="12" cy="12" r="6" fill="none" stroke="currentColor" stroke-width="2.1"/>
+  <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+</svg></div>
+<div id="cursor-ring"></div>
+<div class="grid-bg"></div>
+<div id="page-transition">
+  <div class="pt-inner">
+    <div class="pt-eyebrow"><span class="i18n-en">SECTION //</span><span class="i18n-hr">ODJELJAK //</span></div>
+    <div class="pt-title" id="pt-title"><span class="i18n-en">Contact</span><span class="i18n-hr">Kontakt</span></div>
+    <div class="pt-line"><span></span></div>
+  </div>
+</div>
+<div id="preloader">
+  <div class="plabel"><span class="i18n-en">TPK // SYSTEM CHECK</span><span class="i18n-hr">TPK // PROVJERA SUSTAVA</span></div>
+  <div class="pct"><span id="pctnum">0</span>%</div>
+  <div class="bar-track"><div class="bar-fill" id="barfill"></div></div>
+  <div class="plabel" id="ploadmsg"><span class="i18n-en">CALIBRATING SENSORS...</span><span class="i18n-hr">KALIBRACIJA SENZORA...</span></div>
+</div>
+<header>
+  <a class="logo" href="index.html"><img src="media/Logo.png" alt="TPK Zavod"><small><span class="i18n-en">Institute for Energy &amp; Process Equipment</span><span class="i18n-hr">Zavod za energetsku i procesnu opremu</span></small></a>
+  <nav class="mainnav">
+    <a href="index.html"><span class="i18n-en">Home</span><span class="i18n-hr">Naslovna</span></a>
+    <a href="about.html"><span class="i18n-en">About</span><span class="i18n-hr">O nama</span></a>
+    <a href="activities.html"><span class="i18n-en">Activities</span><span class="i18n-hr">Djelatnosti</span></a>
+    <a href="quality.html"><span class="i18n-en">Quality System</span><span class="i18n-hr">Sustav kvalitete</span></a>
+    <a href="references.html"><span class="i18n-en">References</span><span class="i18n-hr">Reference</span></a>
+    <a href="contact.html" class="active"><span class="i18n-en">Contact</span><span class="i18n-hr">Kontakt</span></a>
+  </nav>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button type="button" class="lang-toggle-btn" aria-label="Language" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 6 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-6-3.8-9s1.3-6.3 3.8-9z"/></svg>
+      </button>
+      <div class="lang-dropdown">
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="hr">HR</button>
+      </div>
+    </div>
+    <a class="btn" href="contact.html"><span><span class="i18n-en">Get in touch</span><span class="i18n-hr">Kontaktirajte nas</span></span></a>
+    <div class="burger"><span></span><span></span><span></span></div>
+  </div>
+</header>
+<div id="mobile-menu">
+  <div class="mm-top">
+    <a class="logo" href="index.html"><img src="media/Logo.png" alt="TPK Zavod"><small><span class="i18n-en">Institute for Energy &amp; Process Equipment</span><span class="i18n-hr">Zavod za energetsku i procesnu opremu</span></small></a>
+    <div class="mm-close" role="button" aria-label="Close menu"><span></span><span></span></div>
+  </div>
+  <nav class="mm-nav">
+    <a href="index.html"><span class="i18n-en">Home</span><span class="i18n-hr">Naslovna</span></a>
+    <a href="about.html"><span class="i18n-en">About</span><span class="i18n-hr">O nama</span></a>
+    <a href="activities.html"><span class="i18n-en">Activities</span><span class="i18n-hr">Djelatnosti</span></a>
+    <a href="quality.html"><span class="i18n-en">Quality System</span><span class="i18n-hr">Sustav kvalitete</span></a>
+    <a href="references.html"><span class="i18n-en">References</span><span class="i18n-hr">Reference</span></a>
+    <a href="contact.html" class="active"><span class="i18n-en">Contact</span><span class="i18n-hr">Kontakt</span></a>
+  </nav>
+  <div class="mm-bottom">
+    <div class="mm-lang">
+      <button type="button" class="lang-btn" data-lang="en">EN</button>/<button type="button" class="lang-btn" data-lang="hr">HR</button>
+    </div>
+    <a href="mailto:tpk-zavod@tpk-zavod.hr">tpk-zavod@tpk-zavod.hr</a>
+    <a href="tel:+38512409628">+385 1 2409 628</a>
+  </div>
+</div>
+<main>
+
+<section class="page-hero" style="padding-bottom:40px;">
+  <div class="wrap">
+    <div class="eyebrow"><span class="i18n-en">Contact</span><span class="i18n-hr">Kontakt</span></div>
+    <h1><span class="i18n-en">Send us the spec.<br>We'll tell you what it takes.</span><span class="i18n-hr">Po&scaron;aljite nam specifikaciju.<br>Re&#263;i &#263;emo vam &scaron;to je potrebno.</span></h1>
+    <p><span class="i18n-en">Whether it's a design review, a field test, or a certificate that's about to expire &mdash; get in touch and we'll route it to the right engineer.</span><span class="i18n-hr">Bilo da je rije&#269; o reviziji projekta, terenskom ispitivanju ili certifikatu kojem uskoro isti&#269;e rok &mdash; javite nam se i proslijedit &#263;emo to pravom in&#382;enjeru.</span></p>
+  </div>
+</section>
+
+<section class="pad-sm">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="eyebrow reveal">TPK &mdash; ZAVOD d.o.o.</div>
+        <dl>
+          <dt><span class="i18n-en">Address</span><span class="i18n-hr">Adresa</span></dt><dd>Slavonska avenija 20, 10000 Zagreb, <span class="i18n-en">Croatia</span><span class="i18n-hr">Hrvatska</span></dd>
+          <dt><span class="i18n-en">Phone</span><span class="i18n-hr">Telefon</span></dt><dd><a href="tel:+38512409628">+385 1 2409 628</a></dd>
+          <dt>Fax</dt><dd>+385 1 2349 215</dd>
+          <dt>E-mail</dt><dd><a href="mailto:tpk-zavod@tpk-zavod.hr">tpk-zavod@tpk-zavod.hr</a></dd>
+        </dl>
+        <div class="contact-map">
+          <div id="contact-map-canvas"></div>
+          <a class="map-gmaps-link" href="https://www.google.com/maps/search/?api=1&query=45.7957231,16.0297197" target="_blank" rel="noopener">
+            <span class="i18n-en">Open in Google Maps</span><span class="i18n-hr">Otvori u Google Kartama</span>
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contact-form">
+        <div class="form-field"><label><span class="i18n-en">Name &amp; company</span><span class="i18n-hr">Ime i tvrtka</span></label><input type="text" data-ph-en="Ivan Horvat, Plant d.o.o." data-ph-hr="Ivan Horvat, Postrojenje d.o.o." placeholder="Ivan Horvat, Plant d.o.o." required></div>
+        <div class="form-field"><label>E-mail</label><input type="email" placeholder="ivan@plant.hr" required></div>
+        <div class="form-field"><label><span class="i18n-en">What do you need tested or built?</span><span class="i18n-hr">&Scaron;to je potrebno ispitati ili izraditi?</span></label><textarea data-ph-en="Equipment type, standard, timeline..." data-ph-hr="Vrsta opreme, norma, rokovi..." placeholder="Equipment type, standard, timeline..." required></textarea></div>
+        <div class="submit-row">
+          <button class="btn" type="submit" style="cursor:pointer;background:none;"><span><span class="i18n-en">Send request</span><span class="i18n-hr">Po&scaron;aljite upit</span></span></button>
+          <span class="note"><span class="i18n-en">We reply within one business day.</span><span class="i18n-hr">Odgovaramo u roku jednog radnog dana.</span></span>
+        </div>
+        <div class="form-msg" id="form-msg"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="pad section-light" data-header-toggle>
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="reveal"><span class="i18n-en">Direct contacts</span><span class="i18n-hr">Izravni kontakti</span></h2>
+      <p class="reveal"><span class="i18n-en">Reach the department directly if you already know who you need.</span><span class="i18n-hr">Obratite se izravno odjelu ako ve&#263; znate koga trebate.</span></p>
+    </div>
+    <div class="staff-list">
+      <div class="staff-item reveal">
+        <div class="staff-dept"><span class="i18n-en">Management</span><span class="i18n-hr">Uprava</span></div>
+        <div class="staff-name">Zdravko Sko&#269;i&#263;, dipl. ing.</div>
+        <div class="staff-role"><span class="i18n-en">Director</span><span class="i18n-hr">Direktor</span></div>
+        <div class="staff-contacts">
+          <a href="tel:+38512409628">Tel: +385 1 2409 628</a>
+          <span>Fax: +385 1 2349 215</span>
+          <a href="tel:+385992183516">Mob: +385 99 2183 516</a>
+          <a href="mailto:zdravko.skocic@tpk-zavod.hr">zdravko.skocic@tpk-zavod.hr</a>
+        </div>
+      </div>
+      <div class="staff-item reveal">
+        <div class="staff-dept"><span class="i18n-en">Technical Office</span><span class="i18n-hr">Tehni&#269;ki biro</span></div>
+        <div class="staff-name">Goran Bujas, dipl. ing.</div>
+        <div class="staff-role"><span class="i18n-en">Head of Department</span><span class="i18n-hr">Voditelj odjela</span></div>
+        <div class="staff-contacts">
+          <a href="tel:+38512409009">Tel: +385 1 2409 009</a>
+          <span>Fax: +385 1 2349 215</span>
+          <a href="tel:+385916228601">Mob: +385 91 6228 601</a>
+          <a href="mailto:goran.bujas@tpk-zavod.hr">goran.bujas@tpk-zavod.hr</a>
+        </div>
+      </div>
+      <div class="staff-item reveal">
+        <div class="staff-dept"><span class="i18n-en">Laboratory Department</span><span class="i18n-hr">Odjel laboratorija</span></div>
+        <div class="staff-name">Ivan Geren&#269;ir, ing.</div>
+        <div class="staff-role"><span class="i18n-en">Head of Department</span><span class="i18n-hr">Voditelj odjela</span></div>
+        <div class="staff-contacts">
+          <a href="tel:+38512407019">Tel: +385 1 2407 019</a>
+          <span>Fax: +385 1 2349 215</span>
+          <a href="mailto:ivan.gerencir@tpk-zavod.hr">ivan.gerencir@tpk-zavod.hr</a>
+        </div>
+      </div>
+      <div class="staff-item reveal">
+        <div class="staff-dept"><span class="i18n-en">Non-Destructive Testing Lab</span><span class="i18n-hr">Laboratorij za ispitivanje bez razaranja</span></div>
+        <div class="staff-name">Tibor &#381;upan&#269;i&#263;, mag. ing.</div>
+        <div class="staff-role"><span class="i18n-en">Head of Laboratory</span><span class="i18n-hr">Voditelj laboratorija</span></div>
+        <div class="staff-contacts">
+          <a href="tel:+38512407019">Tel: +385 1 2407 019</a>
+          <span>Fax: +385 1 2349 215</span>
+          <a href="tel:+385994931410">Mob: +385 99 4931 410</a>
+          <a href="mailto:tibor.zupancic@tpk-zavod.hr">tibor.zupancic@tpk-zavod.hr</a>
+        </div>
+      </div>
+      <div class="staff-item reveal">
+        <div class="staff-dept"><span class="i18n-en">Destructive Testing Lab</span><span class="i18n-hr">Laboratorij za ispitivanje razaranjem</span></div>
+        <div class="staff-name">Miodrag Jerkovi&#263;, dipl. ing.</div>
+        <div class="staff-role"><span class="i18n-en">Head of Laboratory</span><span class="i18n-hr">Voditelj laboratorija</span></div>
+        <div class="staff-contacts">
+          <a href="tel:+38512409632">Tel: +385 1 2409 632</a>
+          <span>Fax: +385 1 2349 215</span>
+          <a href="tel:+385993124361">Mob: +385 99 3124 361</a>
+          <a href="mailto:miodrag.jerkovic@tpk-zavod.hr">miodrag.jerkovic@tpk-zavod.hr</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="margin-bottom:16px;"><img src="media/Logo.png" alt="TPK Zavod"><small><span class="i18n-en">Institute for Energy &amp; Process Equipment</span><span class="i18n-hr">Zavod za energetsku i procesnu opremu</span></small></div>
+        <p style="color:var(--text-dim);font-size:13.5px;max-width:30ch;line-height:1.6;"><span class="i18n-en">Institute for energy and process equipment. Design, manufacturing, assembly, exploitation, testing, certification.</span><span class="i18n-hr">Zavod za energetsku i procesnu opremu. Projektiranje, izrada, montaža, eksploatacija, ispitivanje, certificiranje.</span></p>
+      </div>
+      <div>
+        <h5><span class="i18n-en">Pages</span><span class="i18n-hr">Stranice</span></h5>
+        <ul>
+          <li><a href="about.html"><span class="i18n-en">About</span><span class="i18n-hr">O nama</span></a></li>
+          <li><a href="activities.html"><span class="i18n-en">Activities</span><span class="i18n-hr">Djelatnosti</span></a></li>
+          <li><a href="quality.html"><span class="i18n-en">Quality system</span><span class="i18n-hr">Sustav kvalitete</span></a></li>
+          <li><a href="references.html"><span class="i18n-en">References</span><span class="i18n-hr">Reference</span></a></li>
+          <li><a href="contact.html"><span class="i18n-en">Contact</span><span class="i18n-hr">Kontakt</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h5><span class="i18n-en">Contact</span><span class="i18n-hr">Kontakt</span></h5>
+        <ul>
+          <li><a href="mailto:tpk-zavod@tpk-zavod.hr">tpk-zavod@tpk-zavod.hr</a></li>
+          <li><a href="tel:+38512409628">+385 1 2409 628</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5><span class="i18n-en">Location</span><span class="i18n-hr">Lokacija</span></h5>
+        <ul>
+          <li>Slavonska avenija 20</li>
+          <li>10000 Zagreb, <span class="i18n-en">Croatia</span><span class="i18n-hr">Hrvatska</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 TPK &mdash; Zavod d.o.o. <span class="i18n-en">All rights reserved.</span><span class="i18n-hr">Sva prava pridržana.</span></span>
+      <span>Design and Development &middot; AD ASTRA, OBRT ZA RA&Ccaron;UNALNO PROGRAMIRANJE I USLUGE</span>
+    </div>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.js"></script>
+<script type="module" src="js/contact.js"></script>
+</body>
+</html>

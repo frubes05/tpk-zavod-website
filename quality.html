@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>if(sessionStorage.getItem('tpkNav')==='1'){document.documentElement.classList.add('nav-arrival');if(sessionStorage.getItem('tpkNavLight')==='1'){document.documentElement.classList.add('nav-light');}}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quality system — TPK Zavod</title>
+<meta name="description" content="Nine active accreditations and certifications: HAA 17025, 17020, 17065, 17024, TÜV SCC, and four SGS ISO certificates.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="media/Logo.ico" type="image/x-icon">
+<link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<script>document.body.className = 'lang-' + (localStorage.getItem('tpkLang') || 'en');</script>
+<div id="scroll-progress"></div>
+<div id="cursor-dot"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(0 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(45 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(90 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(135 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(180 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(225 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(270 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(315 12 12)" fill="currentColor"/>
+  <circle cx="12" cy="12" r="6" fill="none" stroke="currentColor" stroke-width="2.1"/>
+  <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+</svg></div>
+<div id="cursor-ring"></div>
+<div class="grid-bg"></div>
+<div id="page-transition">
+  <div class="pt-inner">
+    <div class="pt-eyebrow"><span class="i18n-en">SECTION //</span><span class="i18n-hr">ODJELJAK //</span></div>
+    <div class="pt-title" id="pt-title"><span class="i18n-en">Quality System</span><span class="i18n-hr">Sustav kvalitete</span></div>
+    <div class="pt-line"><span></span></div>
+  </div>
+</div>
+<div id="preloader">
+  <div class="plabel"><span class="i18n-en">TPK // SYSTEM CHECK</span><span class="i18n-hr">TPK // PROVJERA SUSTAVA</span></div>
+  <div class="pct"><span id="pctnum">0</span>%</div>
+  <div class="bar-track"><div class="bar-fill" id="barfill"></div></div>
+  <div class="plabel" id="ploadmsg"><span class="i18n-en">CALIBRATING SENSORS...</span><span class="i18n-hr">KALIBRACIJA SENZORA...</span></div>
+</div>
+<header>
+  <a class="logo" href="index.html"><img src="media/Logo.png" alt="TPK Zavod"><small><span class="i18n-en">Institute for Energy &amp; Process Equipment</span><span class="i18n-hr">Zavod za energetsku i procesnu opremu</span></small></a>
+  <nav class="mainnav">
+    <a href="index.html"><span class="i18n-en">Home</span><span class="i18n-hr">Naslovna</span></a>
+    <a href="about.html"><span class="i18n-en">About</span><span class="i18n-hr">O nama</span></a>
+    <a href="activities.html"><span class="i18n-en">Activities</span><span class="i18n-hr">Djelatnosti</span></a>
+    <a href="quality.html" class="active"><span class="i18n-en">Quality System</span><span class="i18n-hr">Sustav kvalitete</span></a>
+    <a href="references.html"><span class="i18n-en">References</span><span class="i18n-hr">Reference</span></a>
+    <a href="contact.html"><span class="i18n-en">Contact</span><span class="i18n-hr">Kontakt</span></a>
+  </nav>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button type="button" class="lang-toggle-btn" aria-label="Language" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 6 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-6-3.8-9s1.3-6.3 3.8-9z"/></svg>
+      </button>
+      <div class="lang-dropdown">
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="hr">HR</button>
+      </div>
+    </div>
+    <a class="btn" href="contact.html"><span><span class="i18n-en">Get in touch</span><span class="i18n-hr">Kontaktirajte nas</span></span></a>
+    <div class="burger"><span></span><span></span><span></span></div>
+  </div>
+</header>
+<div id="mobile-menu">
+  <div class="mm-top">
+    <a class="logo" href="index.html"><img src="media/Logo.png" alt="TPK Zavod"><small><span class="i18n-en">Institute for Energy &amp; Process Equipment</span><span class="i18n-hr">Zavod za energetsku i procesnu opremu</span></small></a>
+    <div class="mm-close" role="button" aria-label="Close menu"><span></span><span></span></div>
+  </div>
+  <nav class="mm-nav">
+    <a href="index.html"><span class="i18n-en">Home</span><span class="i18n-hr">Naslovna</span></a>
+    <a href="about.html"><span class="i18n-en">About</span><span class="i18n-hr">O nama</span></a>
+    <a href="activities.html"><span class="i18n-en">Activities</span><span class="i18n-hr">Djelatnosti</span></a>
+    <a href="quality.html" class="active"><span class="i18n-en">Quality System</span><span class="i18n-hr">Sustav kvalitete</span></a>
+    <a href="references.html"><span class="i18n-en">References</span><span class="i18n-hr">Reference</span></a>
+    <a href="contact.html"><span class="i18n-en">Contact</span><span class="i18n-hr">Kontakt</span></a>
+  </nav>
+  <div class="mm-bottom">
+    <div class="mm-lang">
+      <button type="button" class="lang-btn" data-lang="en">EN</button>/<button type="button" class="lang-btn" data-lang="hr">HR</button>
+    </div>
+    <a href="mailto:tpk-zavod@tpk-zavod.hr">tpk-zavod@tpk-zavod.hr</a>
+    <a href="tel:+38512409628">+385 1 2409 628</a>
+  </div>
+</div>
+<main>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow"><span class="i18n-en">Quality management system</span><span class="i18n-hr">Sustav upravljanja kvalitetom</span></div>
+    <h1><span class="i18n-en">Nine accreditations.<br>One audit trail.</span><span class="i18n-hr">Devet akreditacija.<br>Jedan trag revizije.</span></h1>
+    <p><span class="i18n-en">Every scope we operate under &mdash; testing, inspection, product certification, personnel certification &mdash; is backed by an accreditation or certificate on public record, not a self-declared claim.</span><span class="i18n-hr">Svako podru&#269;je u kojem djelujemo &mdash; ispitivanje, inspekcija, certificiranje proizvoda, certificiranje osoblja &mdash; potkrijepljeno je javno dostupnom akreditacijom ili certifikatom, a ne samoproglaenom tvrdnjom.</span></p>
+  </div>
+</section>
+
+<section class="pad-sm">
+  <div class="wrap">
+    <div class="stats-row">
+      <div class="stat reveal"><div class="num"><span data-count="60" id="qstat1">0</span>+</div><div class="lbl"><span class="i18n-en">Years of tradition</span><span class="i18n-hr">Godina tradicije</span></div></div>
+      <div class="stat reveal"><div class="num"><span data-count="9" id="qstat2">0</span></div><div class="lbl"><span class="i18n-en">Active accreditations &amp; certifications</span><span class="i18n-hr">Aktivnih akreditacija i certifikata</span></div></div>
+      <div class="stat reveal"><div class="num"><span data-count="4" id="qstat3">0</span></div><div class="lbl"><span class="i18n-en">Lifecycle stages under one roof</span><span class="i18n-hr">Faze &#382;ivotnog ciklusa pod jednim krovom</span></div></div>
+    </div>
+
+    <div class="quality-flex">
+      <div class="badge-grid">
+        <div class="badge reveal"><b>HAA 17025</b><span class="i18n-en">Testing &amp; calibration labs (LIBR &amp; LIMR) &mdash; No. 1085</span><span class="i18n-hr">Ispitni i umjerni laboratoriji (LIBR i LIMR) &mdash; br. 1085</span></div>
+        <div class="badge reveal"><b>HAA 17020</b><span class="i18n-en">Inspection body &mdash; No. 6482</span><span class="i18n-hr">Inspekcijsko tijelo &mdash; br. 6482</span></div>
+        <div class="badge reveal"><b>HAA 17065</b><span class="i18n-en">Product certification &mdash; No. 3143</span><span class="i18n-hr">Certifikacija proizvoda &mdash; br. 3143</span></div>
+        <div class="badge reveal"><b>HAA 17024</b><span class="i18n-en">Welding personnel certification &mdash; No. 5461</span><span class="i18n-hr">Certifikacija zavariva&#269;kog osoblja &mdash; br. 5461</span></div>
+        <div class="badge reveal"><b>T&Uuml;V SCC</b><span class="i18n-en">Safety, health &amp; environment</span><span class="i18n-hr">Sigurnost, zdravlje i okoli&scaron;</span></div>
+        <div class="badge reveal"><b>SGS ISO 9001</b><span class="i18n-en">Quality management</span><span class="i18n-hr">Upravljanje kvalitetom</span></div>
+        <div class="badge reveal"><b>SGS ISO 14001</b><span class="i18n-en">Environmental management</span><span class="i18n-hr">Upravljanje okoli&scaron;em</span></div>
+        <div class="badge reveal"><b>SGS ISO 45001</b><span class="i18n-en">Occupational health &amp; safety</span><span class="i18n-hr">Za&scaron;tita zdravlja i sigurnost na radu</span></div>
+        <div class="badge reveal"><b>SGS ISO 29001</b><span class="i18n-en">Sector-specific QMS</span><span class="i18n-hr">Sektorski sustav upravljanja kvalitetom</span></div>
+      </div>
+
+      <div class="stamp-wrap reveal">
+        <svg viewBox="0 0 200 200">
+          <defs><path id="stampcircle" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+          <g id="stamptext" style="transform-origin:100px 100px;">
+            <text font-family="IBM Plex Mono" font-size="9.5" fill="#8a9199" letter-spacing="2">
+              <textPath href="#stampcircle" startOffset="0%">ACCREDITED &middot; CERTIFIED &middot; AUDITED &middot; INDEPENDENT &middot; ACCREDITED &middot; CERTIFIED &middot; AUDITED &middot; INDEPENDENT &middot;</textPath>
+            </text>
+          </g>
+          <circle cx="100" cy="100" r="60" fill="none" stroke="#262b30" stroke-width="1"/>
+        </svg>
+        <div class="stamp-core"><div class="big">TPK</div><div class="small">ZAVOD &middot; EST. STAGE 01</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" data-bg-toggle>
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="reveal"><span class="i18n-en">Approvals &amp; notifications</span><span class="i18n-hr">Odobrenja i prijave</span></h2>
+      <p class="reveal"><span class="i18n-en">Beyond the accreditation registers, the following approvals let us certify equipment for market placement.</span><span class="i18n-hr">Osim akreditacijskih registara, sljede&#263;a odobrenja omogu&#263;uju nam certificiranje opreme za stavljanje na tr&#382;i&scaron;te.</span></p>
+    </div>
+    <ul class="approval-list">
+      <li class="reveal"><b><span class="i18n-en">Croatian Register of Shipping</span><span class="i18n-hr">Hrvatski registar brodova</span></b><span class="i18n-en">Approval for marine and offshore-related equipment work.</span><span class="i18n-hr">Odobrenje za rad na pomorskoj i offshore opremi.</span></li>
+      <li class="reveal"><b>MINGO RH &middot; NN 79/16</b><span class="i18n-en">Conformity assessment body decision for pressure equipment.</span><span class="i18n-hr">Rje&scaron;enje za tijelo za ocjenjivanje sukladnosti tla&#269;ne opreme.</span></li>
+      <li class="reveal"><b>MINGO RH &middot; NN 27/16</b><span class="i18n-en">Conformity assessment body decision for simple pressure equipment.</span><span class="i18n-hr">Rje&scaron;enje za tijelo za ocjenjivanje sukladnosti jednostavne tla&#269;ne opreme.</span></li>
+      <li class="reveal"><b>MINGO RH &middot; NN 75/20</b><span class="i18n-en">Decision for inspection of pressure equipment.</span><span class="i18n-hr">Rje&scaron;enje za inspekciju tla&#269;ne opreme.</span></li>
+      <li class="reveal"><b><span class="i18n-en">EC notification</span><span class="i18n-hr">EK prijava</span></b><span class="i18n-en">Notified conformity assessment body for pressure vessels and simple pressure vessels.</span><span class="i18n-hr">Prijavljeno tijelo za ocjenjivanje sukladnosti tla&#269;nih posuda i jednostavnih tla&#269;nih posuda.</span></li>
+    </ul>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="eu-strip">
+    <div class="eu-badge"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 6v6l4 2"/></svg></div>
+    <p class="reveal"><span class="i18n-en">End recipient of a financial instrument co-financed by the European Regional Development Fund, under the Operational Programme &ldquo;Competitiveness and Cohesion.&rdquo;</span><span class="i18n-hr">Krajnji primatelj financijskog instrumenta sufinanciranog iz Europskog fonda za regionalni razvoj u sklopu Operativnog programa &bdquo;Konkurentnost i kohezija&ldquo;.</span></p>
+  </div>
+</div>
+
+<section class="cta-block">
+  <div class="wrap">
+    <div class="cta-flex">
+      <div>
+        <div class="cta-note reveal"><span class="i18n-en">We reply within one business day</span><span class="i18n-hr">Odgovaramo u roku jednog radnog dana</span></div>
+        <h2 class="reveal"><span class="i18n-en">Need a certificate you can defend in an audit?</span><span class="i18n-hr">Trebate certifikat koji mo&#382;ete obraniti na reviziji?</span></h2>
+        <p class="reveal"><span class="i18n-en">We can walk you through which of our nine accreditations applies to your equipment.</span><span class="i18n-hr">Provest &#263;emo vas kroz to koja od na&scaron;ih devet akreditacija vrijedi za va&scaron;u opremu.</span></p>
+      </div>
+      <a class="btn reveal" href="contact.html"><span><span class="i18n-en">Contact us</span><span class="i18n-hr">Kontaktirajte nas</span></span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="margin-bottom:16px;"><img src="media/Logo.png" alt="TPK Zavod"><small><span class="i18n-en">Institute for Energy &amp; Process Equipment</span><span class="i18n-hr">Zavod za energetsku i procesnu opremu</span></small></div>
+        <p style="color:var(--text-dim);font-size:13.5px;max-width:30ch;line-height:1.6;"><span class="i18n-en">Institute for energy and process equipment. Design, manufacturing, assembly, exploitation, testing, certification.</span><span class="i18n-hr">Zavod za energetsku i procesnu opremu. Projektiranje, izrada, montaža, eksploatacija, ispitivanje, certificiranje.</span></p>
+      </div>
+      <div>
+        <h5><span class="i18n-en">Pages</span><span class="i18n-hr">Stranice</span></h5>
+        <ul>
+          <li><a href="about.html"><span class="i18n-en">About</span><span class="i18n-hr">O nama</span></a></li>
+          <li><a href="activities.html"><span class="i18n-en">Activities</span><span class="i18n-hr">Djelatnosti</span></a></li>
+          <li><a href="quality.html"><span class="i18n-en">Quality system</span><span class="i18n-hr">Sustav kvalitete</span></a></li>
+          <li><a href="references.html"><span class="i18n-en">References</span><span class="i18n-hr">Reference</span></a></li>
+          <li><a href="contact.html"><span class="i18n-en">Contact</span><span class="i18n-hr">Kontakt</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h5><span class="i18n-en">Contact</span><span class="i18n-hr">Kontakt</span></h5>
+        <ul>
+          <li><a href="mailto:tpk-zavod@tpk-zavod.hr">tpk-zavod@tpk-zavod.hr</a></li>
+          <li><a href="tel:+38512409628">+385 1 2409 628</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5><span class="i18n-en">Location</span><span class="i18n-hr">Lokacija</span></h5>
+        <ul>
+          <li>Slavonska avenija 20</li>
+          <li>10000 Zagreb, <span class="i18n-en">Croatia</span><span class="i18n-hr">Hrvatska</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 TPK &mdash; Zavod d.o.o. <span class="i18n-en">All rights reserved.</span><span class="i18n-hr">Sva prava pridržana.</span></span>
+      <span>Design and Development &middot; AD ASTRA, OBRT ZA RA&Ccaron;UNALNO PROGRAMIRANJE I USLUGE</span>
+    </div>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script type="module" src="js/quality.js"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>if(sessionStorage.getItem('tpkNav')==='1'){document.documentElement.classList.add('nav-arrival');if(sessionStorage.getItem('tpkNavLight')==='1'){document.documentElement.classList.add('nav-light');}}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Activities — TPK Zavod</title>
+<meta name="description" content="Design, manufacturing, assembly, exploitation support and non-destructive testing for energy and process equipment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="media/Logo.ico" type="image/x-icon">
+<link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<script>document.body.className = 'lang-' + (localStorage.getItem('tpkLang') || 'en');</script>
+<div id="scroll-progress"></div>
+<div id="cursor-dot"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(0 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(45 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(90 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(135 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(180 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(225 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(270 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(315 12 12)" fill="currentColor"/>
+  <circle cx="12" cy="12" r="6" fill="none" stroke="currentColor" stroke-width="2.1"/>
+  <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+</svg></div>
+<div id="cursor-ring"></div>
+<div class="grid-bg"></div>
+<div id="page-transition">
+  <div class="pt-inner">
+    <div class="pt-eyebrow"><span class="i18n-en">SECTION //</span><span class="i18n-hr">ODJELJAK //</span></div>
+    <div class="pt-title" id="pt-title"><span class="i18n-en">Activities</span><span class="i18n-hr">Djelatnosti</span></div>
+    <div class="pt-line"><span></span></div>
+  </div>
+</div>
+<div id="preloader">
+  <div class="plabel"><span class="i18n-en">TPK // SYSTEM CHECK</span><span class="i18n-hr">TPK // PROVJERA SUSTAVA</span></div>
+  <div class="pct"><span id="pctnum">0</span>%</div>
+  <div class="bar-track"><div class="bar-fill" id="barfill"></div></div>
+  <div class="plabel" id="ploadmsg"><span class="i18n-en">CALIBRATING SENSORS...</span><span class="i18n-hr">KALIBRACIJA SENZORA...</span></div>
+</div>
+<header>
+  <a class="logo" href="index.html"><img src="media/Logo.png" alt="TPK Zavod"><small><span class="i18n-en">Institute for Energy &amp; Process Equipment</span><span class="i18n-hr">Zavod za energetsku i procesnu opremu</span></small></a>
+  <nav class="mainnav">
+    <a href="index.html"><span class="i18n-en">Home</span><span class="i18n-hr">Naslovna</span></a>
+    <a href="about.html"><span class="i18n-en">About</span><span class="i18n-hr">O nama</span></a>
+    <a href="activities.html" class="active"><span class="i18n-en">Activities</span><span class="i18n-hr">Djelatnosti</span></a>
+    <a href="quality.html"><span class="i18n-en">Quality System</span><span class="i18n-hr">Sustav kvalitete</span></a>
+    <a href="references.html"><span class="i18n-en">References</span><span class="i18n-hr">Reference</span></a>
+    <a href="contact.html"><span class="i18n-en">Contact</span><span class="i18n-hr">Kontakt</span></a>
+  </nav>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button type="button" class="lang-toggle-btn" aria-label="Language" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 6 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-6-3.8-9s1.3-6.3 3.8-9z"/></svg>
+      </button>
+      <div class="lang-dropdown">
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="hr">HR</button>
+      </div>
+    </div>
+    <a class="btn" href="contact.html"><span><span class="i18n-en">Get in touch</span><span class="i18n-hr">Kontaktirajte nas</span></span></a>
+    <div class="burger"><span></span><span></span><span></span></div>
+  </div>
+</header>
+<div id="mobile-menu">
+  <div class="mm-top">
+    <a class="logo" href="index.html"><img src="media/Logo.png" alt="TPK Zavod"><small><span class="i18n-en">Institute for Energy &amp; Process Equipment</span><span class="i18n-hr">Zavod za energetsku i procesnu opremu</span></small></a>
+    <div class="mm-close" role="button" aria-label="Close menu"><span></span><span></span></div>
+  </div>
+  <nav class="mm-nav">
+    <a href="index.html"><span class="i18n-en">Home</span><span class="i18n-hr">Naslovna</span></a>
+    <a href="about.html"><span class="i18n-en">About</span><span class="i18n-hr">O nama</span></a>
+    <a href="activities.html" class="active"><span class="i18n-en">Activities</span><span class="i18n-hr">Djelatnosti</span></a>
+    <a href="quality.html"><span class="i18n-en">Quality System</span><span class="i18n-hr">Sustav kvalitete</span></a>
+    <a href="references.html"><span class="i18n-en">References</span><span class="i18n-hr">Reference</span></a>
+    <a href="contact.html"><span class="i18n-en">Contact</span><span class="i18n-hr">Kontakt</span></a>
+  </nav>
+  <div class="mm-bottom">
+    <div class="mm-lang">
+      <button type="button" class="lang-btn" data-lang="en">EN</button>/<button type="button" class="lang-btn" data-lang="hr">HR</button>
+    </div>
+    <a href="mailto:tpk-zavod@tpk-zavod.hr">tpk-zavod@tpk-zavod.hr</a>
+    <a href="tel:+38512409628">+385 1 2409 628</a>
+  </div>
+</div>
+<main>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow"><span class="i18n-en">Activities</span><span class="i18n-hr">Djelatnosti</span></div>
+    <h1><span class="i18n-en">Design, build,<br>inspect, certify</span><span class="i18n-hr">Projektiranje, izrada,<br>pregled, certifikacija</span></h1>
+    <p><span class="i18n-en">We own the equipment lifecycle end to end &mdash; so a design decision made on paper is still accountable to us when the unit is in service twenty years later.</span><span class="i18n-hr">Pratimo cijeli &#382;ivotni ciklus opreme &mdash; odluka donesena na papiru i dalje je na&scaron;a odgovornost kad je ure&#273;aj u pogonu i dvadeset godina kasnije.</span></p>
+  </div>
+</section>
+
+<section class="pad-sm">
+  <div class="wrap">
+    <div class="services-grid">
+      <div class="svc-card reveal">
+        <div><div class="svc-num">01</div><svg class="svc-icon" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M21 7v6M21 7h-6"/></svg></div>
+        <div><h3><span class="i18n-en">Design &amp; engineering</span><span class="i18n-hr">Projektiranje i in&#382;enjering</span></h3><p><span class="i18n-en">Calculation, drawings and technical documentation for pressure vessels, boilers and process equipment.</span><span class="i18n-hr">Prora&#269;uni, nacrti i tehni&#269;ka dokumentacija za tla&#269;ne posude, kotlove i procesnu opremu.</span></p></div>
+      </div>
+      <div class="svc-card reveal">
+        <div><div class="svc-num">02</div><svg class="svc-icon" viewBox="0 0 24 24"><path d="M4 20l4-4 12-12 3 3-12 12-4 4H4v-3z"/></svg></div>
+        <div><h3><span class="i18n-en">Manufacturing</span><span class="i18n-hr">Izrada</span></h3><p><span class="i18n-en">Production of steel structures and process components under a documented Q.A./Q.C. system.</span><span class="i18n-hr">Izrada &#269;eli&#269;nih konstrukcija i procesnih komponenti pod dokumentiranim Q.A./Q.C. sustavom.</span></p></div>
+      </div>
+      <div class="svc-card reveal">
+        <div><div class="svc-num">03</div><svg class="svc-icon" viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></div>
+        <div><h3><span class="i18n-en">Assembly</span><span class="i18n-hr">Monta&#382;a</span></h3><p><span class="i18n-en">On-site construction and installation, supervised by our own engineers through commissioning.</span><span class="i18n-hr">Izgradnja i monta&#382;a na terenu, uz nadzor na&scaron;ih in&#382;enjera sve do pu&scaron;tanja u pogon.</span></p></div>
+      </div>
+      <div class="svc-card reveal">
+        <div><div class="svc-num">04</div><svg class="svc-icon" viewBox="0 0 24 24"><path d="M12 8v4l3 3M12 2a10 10 0 100 20 10 10 0 000-20z"/></svg></div>
+        <div><h3><span class="i18n-en">Exploitation support</span><span class="i18n-hr">Podr&scaron;ka u eksploataciji</span></h3><p><span class="i18n-en">In-service inspection, periodic testing and technical support for equipment already running.</span><span class="i18n-hr">Pregledi u pogonu, periodi&#269;na ispitivanja i tehni&#269;ka podr&scaron;ka za opremu koja je ve&#263; u radu.</span></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" style="background:var(--bg-panel-2);" data-bg-toggle>
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="reveal"><span class="i18n-en">Our scope of work</span><span class="i18n-hr">Na&scaron; djelokrug rada</span></h2>
+      <p class="reveal"><span class="i18n-en">The full list of services registered under our activity, as delivered to plant operators and equipment manufacturers.</span><span class="i18n-hr">Potpuni popis usluga registriranih u sklopu na&scaron;e djelatnosti, koje pru&#382;amo operaterima postrojenja i proizvo&#273;a&#269;ima opreme.</span></p>
+    </div>
+    <div class="duty-list">
+      <div class="duty-item reveal"><div class="dnum">01</div><p><span class="i18n-en">Condition and remaining-lifetime assessment of energy and process equipment in service.</span><span class="i18n-hr">Utvr&#273;ivanje i ocjena stanja i preostalog vijeka energetske i procesne opreme u eksploataciji.</span></p></div>
+      <div class="duty-item reveal"><div class="dnum">02</div><p><span class="i18n-en">Design, setup and execution of monitoring programmes for facilities and plants in service.</span><span class="i18n-hr">Projektiranje, uspostavljanje i provo&#273;enje programa pra&#263;enja objekata i postrojenja u eksploataciji.</span></p></div>
+      <div class="duty-item reveal"><div class="dnum">03</div><p><span class="i18n-en">Development of Q.A. (Quality Assurance) and Q.C. (Quality Control) programmes.</span><span class="i18n-hr">Izrada Q.A. i Q.C. programa (osiguranje i kontrola kvalitete).</span></p></div>
+      <div class="duty-item reveal"><div class="dnum">04</div><p><span class="i18n-en">Supervision during manufacture, assembly and repair of energy and process equipment.</span><span class="i18n-hr">Nadzor pri proizvodnji, monta&#382;i i sanaciji energetske i procesne opreme.</span></p></div>
+      <div class="duty-item reveal"><div class="dnum">05</div><p><span class="i18n-en">Supervision during the investment construction of energy and process plants, oil &amp; gas storage facilities, pipeline transport systems and steel load-bearing structures.</span><span class="i18n-hr">Nadzor pri investicijskoj izgradnji energetskih i procesnih postrojenja, skladi&scaron;nih prostora za naftu i plin, transportnih cjevnih sustava i &#269;eli&#269;nih nosivih konstrukcija.</span></p></div>
+      <div class="duty-item reveal"><div class="dnum">06</div><p><span class="i18n-en">Expert and judicial arbitration on the condition of equipment and the cause of damage.</span><span class="i18n-hr">Arbitra&#382;a (stru&#269;na/sudska) stanja opreme i uzroka o&scaron;te&#263;enja.</span></p></div>
+      <div class="duty-item reveal"><div class="dnum">07</div><p><span class="i18n-en">Visual inspection of inaccessible parts of facilities and plants using endoscopic equipment.</span><span class="i18n-hr">Vizualni pregledi nedostupnih dijelova objekata i postrojenja primjenom endoskopa.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="reveal"><span class="i18n-en">Non-destructive testing methods</span><span class="i18n-hr">Metode ispitivanja bez razaranja</span></h2>
+      <p class="reveal"><span class="i18n-en">Applied in the lab or directly on site, on welds and base material.</span><span class="i18n-hr">Primjenjuju se u laboratoriju ili izravno na terenu, na zavarenim spojevima i osnovnom materijalu.</span></p>
+    </div>
+    <div class="cap-grid">
+      <div class="cap-item reveal"><span class="tag">VT</span><p><span class="i18n-en">Visual testing &mdash; the first and most direct check of a weld or surface.</span><span class="i18n-hr">Vizualno ispitivanje &mdash; prva i najizravnija provjera zavara ili povr&scaron;ine.</span></p></div>
+      <div class="cap-item reveal"><span class="tag">RT</span><p><span class="i18n-en">Radiographic testing &mdash; internal defect detection using X-ray or gamma imaging.</span><span class="i18n-hr">Radiografsko ispitivanje &mdash; otkrivanje unutarnjih gre&scaron;aka rendgenskim ili gama zra&#269;enjem.</span></p></div>
+      <div class="cap-item reveal"><span class="tag">UT</span><p><span class="i18n-en">Ultrasonic testing &mdash; wall thickness and internal flaw detection via sound waves.</span><span class="i18n-hr">Ultrazvu&#269;no ispitivanje &mdash; mjerenje debljine stijenke i otkrivanje unutarnjih gre&scaron;aka zvu&#269;nim valovima.</span></p></div>
+      <div class="cap-item reveal"><span class="tag">PT</span><p><span class="i18n-en">Penetrant testing &mdash; surface-breaking defects revealed with liquid dye penetrant.</span><span class="i18n-hr">Penetrantsko ispitivanje &mdash; povr&scaron;inske gre&scaron;ke otkrivene teku&#263;im penetrantom.</span></p></div>
+      <div class="cap-item reveal"><span class="tag">MT</span><p><span class="i18n-en">Magnetic particle testing &mdash; surface and near-surface flaws in ferromagnetic material.</span><span class="i18n-hr">Ispitivanje magnetskim &#269;esticama &mdash; povr&scaron;inske i podpovr&scaron;inske gre&scaron;ke u feromagnetskom materijalu.</span></p></div>
+      <div class="cap-item reveal"><span class="tag">VAC</span><p><span class="i18n-en">Vacuum box testing &mdash; leak detection on plate seams and tank floors.</span><span class="i18n-hr">Vakuumsko ispitivanje &mdash; otkrivanje propu&scaron;tanja na spojevima limova i dnu spremnika.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-block">
+  <div class="wrap">
+    <div class="cta-flex">
+      <div>
+        <div class="cta-note reveal"><span class="i18n-en">We reply within one business day</span><span class="i18n-hr">Odgovaramo u roku jednog radnog dana</span></div>
+        <h2 class="reveal"><span class="i18n-en">Talk to an engineer about your equipment</span><span class="i18n-hr">Razgovarajte s in&#382;enjerom o svojoj opremi</span></h2>
+        <p class="reveal"><span class="i18n-en">Send us the equipment type, applicable standard and timeline — we'll tell you what's involved.</span><span class="i18n-hr">Po&scaron;aljite nam vrstu opreme, primjenjivu normu i rokove — re&#263;i &#263;emo vam &scaron;to je sve potrebno.</span></p>
+      </div>
+      <a class="btn reveal" href="contact.html"><span><span class="i18n-en">Contact us</span><span class="i18n-hr">Kontaktirajte nas</span></span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="margin-bottom:16px;"><img src="media/Logo.png" alt="TPK Zavod"><small><span class="i18n-en">Institute for Energy &amp; Process Equipment</span><span class="i18n-hr">Zavod za energetsku i procesnu opremu</span></small></div>
+        <p style="color:var(--text-dim);font-size:13.5px;max-width:30ch;line-height:1.6;"><span class="i18n-en">Institute for energy and process equipment. Design, manufacturing, assembly, exploitation, testing, certification.</span><span class="i18n-hr">Zavod za energetsku i procesnu opremu. Projektiranje, izrada, montaža, eksploatacija, ispitivanje, certificiranje.</span></p>
+      </div>
+      <div>
+        <h5><span class="i18n-en">Pages</span><span class="i18n-hr">Stranice</span></h5>
+        <ul>
+          <li><a href="about.html"><span class="i18n-en">About</span><span class="i18n-hr">O nama</span></a></li>
+          <li><a href="activities.html"><span class="i18n-en">Activities</span><span class="i18n-hr">Djelatnosti</span></a></li>
+          <li><a href="quality.html"><span class="i18n-en">Quality system</span><span class="i18n-hr">Sustav kvalitete</span></a></li>
+          <li><a href="references.html"><span class="i18n-en">References</span><span class="i18n-hr">Reference</span></a></li>
+          <li><a href="contact.html"><span class="i18n-en">Contact</span><span class="i18n-hr">Kontakt</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h5><span class="i18n-en">Contact</span><span class="i18n-hr">Kontakt</span></h5>
+        <ul>
+          <li><a href="mailto:tpk-zavod@tpk-zavod.hr">tpk-zavod@tpk-zavod.hr</a></li>
+          <li><a href="tel:+38512409628">+385 1 2409 628</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5><span class="i18n-en">Location</span><span class="i18n-hr">Lokacija</span></h5>
+        <ul>
+          <li>Slavonska avenija 20</li>
+          <li>10000 Zagreb, <span class="i18n-en">Croatia</span><span class="i18n-hr">Hrvatska</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 TPK &mdash; Zavod d.o.o. <span class="i18n-en">All rights reserved.</span><span class="i18n-hr">Sva prava pridržana.</span></span>
+      <span>Design and Development &middot; AD ASTRA, OBRT ZA RA&Ccaron;UNALNO PROGRAMIRANJE I USLUGE</span>
+    </div>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script type="module" src="js/activities.js"></script>
+</body>
+</html>

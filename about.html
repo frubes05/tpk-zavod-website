@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>if(sessionStorage.getItem('tpkNav')==='1'){document.documentElement.classList.add('nav-arrival');if(sessionStorage.getItem('tpkNavLight')==='1'){document.documentElement.classList.add('nav-light');}}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — TPK Zavod</title>
+<meta name="description" content="From R&D department inside a steam boiler factory to an independent institute for energy and process equipment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="media/Logo.ico" type="image/x-icon">
+<link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<script>document.body.className = 'lang-' + (localStorage.getItem('tpkLang') || 'en');</script>
+<div id="scroll-progress"></div>
+<div id="cursor-dot"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(0 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(45 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(90 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(135 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(180 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(225 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(270 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(315 12 12)" fill="currentColor"/>
+  <circle cx="12" cy="12" r="6" fill="none" stroke="currentColor" stroke-width="2.1"/>
+  <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+</svg></div>
+<div id="cursor-ring"></div>
+<div class="grid-bg"></div>
+<div id="page-transition">
+  <div class="pt-inner">
+    <div class="pt-eyebrow"><span class="i18n-en">SECTION //</span><span class="i18n-hr">ODJELJAK //</span></div>
+    <div class="pt-title" id="pt-title"><span class="i18n-en">About</span><span class="i18n-hr">O nama</span></div>
+    <div class="pt-line"><span></span></div>
+  </div>
+</div>
+<div id="preloader">
+  <div class="plabel"><span class="i18n-en">TPK // SYSTEM CHECK</span><span class="i18n-hr">TPK // PROVJERA SUSTAVA</span></div>
+  <div class="pct"><span id="pctnum">0</span>%</div>
+  <div class="bar-track"><div class="bar-fill" id="barfill"></div></div>
+  <div class="plabel" id="ploadmsg"><span class="i18n-en">CALIBRATING SENSORS...</span><span class="i18n-hr">KALIBRACIJA SENZORA...</span></div>
+</div>
+<header>
+  <a class="logo" href="index.html"><img src="media/Logo.png" alt="TPK Zavod"><small><span class="i18n-en">Institute for Energy &amp; Process Equipment</span><span class="i18n-hr">Zavod za energetsku i procesnu opremu</span></small></a>
+  <nav class="mainnav">
+    <a href="index.html"><span class="i18n-en">Home</span><span class="i18n-hr">Naslovna</span></a>
+    <a href="about.html" class="active"><span class="i18n-en">About</span><span class="i18n-hr">O nama</span></a>
+    <a href="activities.html"><span class="i18n-en">Activities</span><span class="i18n-hr">Djelatnosti</span></a>
+    <a href="quality.html"><span class="i18n-en">Quality System</span><span class="i18n-hr">Sustav kvalitete</span></a>
+    <a href="references.html"><span class="i18n-en">References</span><span class="i18n-hr">Reference</span></a>
+    <a href="contact.html"><span class="i18n-en">Contact</span><span class="i18n-hr">Kontakt</span></a>
+  </nav>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button type="button" class="lang-toggle-btn" aria-label="Language" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 6 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-6-3.8-9s1.3-6.3 3.8-9z"/></svg>
+      </button>
+      <div class="lang-dropdown">
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="hr">HR</button>
+      </div>
+    </div>
+    <a class="btn" href="contact.html"><span><span class="i18n-en">Get in touch</span><span class="i18n-hr">Kontaktirajte nas</span></span></a>
+    <div class="burger"><span></span><span></span><span></span></div>
+  </div>
+</header>
+<div id="mobile-menu">
+  <div class="mm-top">
+    <a class="logo" href="index.html"><img src="media/Logo.png" alt="TPK Zavod"><small><span class="i18n-en">Institute for Energy &amp; Process Equipment</span><span class="i18n-hr">Zavod za energetsku i procesnu opremu</span></small></a>
+    <div class="mm-close" role="button" aria-label="Close menu"><span></span><span></span></div>
+  </div>
+  <nav class="mm-nav">
+    <a href="index.html"><span class="i18n-en">Home</span><span class="i18n-hr">Naslovna</span></a>
+    <a href="about.html" class="active"><span class="i18n-en">About</span><span class="i18n-hr">O nama</span></a>
+    <a href="activities.html"><span class="i18n-en">Activities</span><span class="i18n-hr">Djelatnosti</span></a>
+    <a href="quality.html"><span class="i18n-en">Quality System</span><span class="i18n-hr">Sustav kvalitete</span></a>
+    <a href="references.html"><span class="i18n-en">References</span><span class="i18n-hr">Reference</span></a>
+    <a href="contact.html"><span class="i18n-en">Contact</span><span class="i18n-hr">Kontakt</span></a>
+  </nav>
+  <div class="mm-bottom">
+    <div class="mm-lang">
+      <button type="button" class="lang-btn" data-lang="en">EN</button>/<button type="button" class="lang-btn" data-lang="hr">HR</button>
+    </div>
+    <a href="mailto:tpk-zavod@tpk-zavod.hr">tpk-zavod@tpk-zavod.hr</a>
+    <a href="tel:+38512409628">+385 1 2409 628</a>
+  </div>
+</div>
+<main>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow"><span class="i18n-en">About TPK</span><span class="i18n-hr">O nama</span></div>
+    <h1><span class="i18n-en">From R&amp;D department<br>to independent institute</span><span class="i18n-hr">Od Odjela za razvoj<br>do samostalnog zavoda</span></h1>
+    <p><span class="i18n-en">Sixty years ago, TPK started as the development department inside a steam boiler factory. Today it's an independent institute that designs, builds, assembles, inspects and certifies energy and process equipment across Croatia and the region.</span><span class="i18n-hr">Prije &scaron;ezdeset godina TPK je po&#269;eo kao odjel za razvoj unutar tvornice parnih kotlova. Danas je to samostalan zavod koji projektira, izra&#273;uje, montira, pregledava i certificira energetsku i procesnu opremu diljem Hrvatske i regije.</span></p>
+  </div>
+</section>
+
+<section class="pad-sm">
+  <div class="wrap">
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-num"><span class="i18n-en">STAGE 01</span><span class="i18n-hr">FAZA 01</span></div>
+        <h3><span class="i18n-en">R&amp;D department</span><span class="i18n-hr">Odjel za razvoj</span></h3>
+        <p><span class="i18n-en">Founded as the &ldquo;Development Department&rdquo; inside &ldquo;TPK&rdquo; &mdash; Tvornica Parnih Kotlova, the steam boiler factory &mdash; to develop and qualify the equipment the plant produced.</span><span class="i18n-hr">Osnovan kao &bdquo;Odjel za razvoj&ldquo; unutar &bdquo;TPK&ldquo; &mdash; Tvornice parnih kotlova &mdash; radi razvoja i provjere opreme koju je tvornica proizvodila.</span></p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-num"><span class="i18n-en">STAGE 02 &middot; 1989</span><span class="i18n-hr">FAZA 02 &middot; 1989.</span></div>
+        <h3><span class="i18n-en">Independent institute</span><span class="i18n-hr">Samostalan zavod</span></h3>
+        <p><span class="i18n-en">Registered in Zagreb as its own legal and business entity on 29 December 1989 &mdash; free to work with any manufacturer, operator or plant in the sector, not only its parent factory.</span><span class="i18n-hr">Registriran u Zagrebu kao samostalan pravni i poslovni subjekt 29. prosinca 1989. &mdash; slobodan sura&#273;ivati s bilo kojim proizvo&#273;a&#269;em, operaterom ili postrojenjem u struci, ne samo s mati&#269;nom tvornicom.</span></p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-num"><span class="i18n-en">STAGE 03</span><span class="i18n-hr">FAZA 03</span></div>
+        <h3><span class="i18n-en">Full-cycle partner</span><span class="i18n-hr">Partner za cijeli &#382;ivotni ciklus</span></h3>
+        <p><span class="i18n-en">Today: a team of engineers and operational staff, laboratory and mobile equipment, covering design, manufacture, assembly and exploitation of energy and process equipment under one roof.</span><span class="i18n-hr">Danas: tim in&#382;enjera i operativnog osoblja, laboratorijska i pokretna oprema, koji pokrivaju projektiranje, izradu, monta&#382;u i eksploataciju energetske i procesne opreme pod istim krovom.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad-sm">
+  <div class="wrap">
+    <div class="story-text-solo">
+      <p class="reveal"><span class="i18n-en">For 60 years of its existence, TPK &mdash; Zavod d.o.o. has followed a development path from the &ldquo;Development Department&rdquo; founded within &ldquo;TPK&rdquo; (the Steam Boiler Factory) to today's independent legal and business entity, which &mdash; through its human and physical resources &mdash; represents a development institution in machine building.</span><span class="i18n-hr">Za svog 60-godi&scaron;njeg postojanja, TPK &ndash; Zavod d.o.o. je pre&scaron;ao razvojni put od &bdquo;Odjela za razvoj&ldquo; osnovanog u sklopu &bdquo;TPK&ldquo; (Tvornice parnih kotlova) do dana&scaron;njeg samostalnog pravnog i poslovnog subjekta koji svojim kadrovskim i fizi&#269;kim resursima predstavlja razvojnu instituciju u strojogradnji.</span></p>
+      <p class="reveal"><span class="i18n-en">Today we have a team of experts, operational staff, and laboratory and mobile equipment, in a quality and scope that allows us to provide a range of services in the design, manufacture (production), assembly (construction) and exploitation of energy and process equipment.</span><span class="i18n-hr">Danas raspola&#382;emo sa timom stru&#269;njaka, operativnim kadrom, laboratorijskom i pokretnom opremom, u kvaliteti i obimu koji nam omogu&#263;uju pru&#382;anje niza usluga u podru&#269;ju projektiranja, izrade (proizvodnje), monta&#382;e (izgradnje) i eksploatacije energetske i procesne opreme.</span></p>
+      <p class="reveal"><span class="i18n-en">Across our entire activity &mdash; and especially in the areas of Q.A. (Quality Assurance) and Q.C. (Quality Control) in the production and assembly of welded structures &mdash; we have built long-standing and successful cooperation with inspection bodies and classification societies (IPT RH; CRS; T&Uuml;V; LR; DNV; BV....).</span><span class="i18n-hr">U cjelokupnoj djelatnosti, a naro&#269;ito u podru&#269;ju Q.A. (Osiguranje kvalitete) i Q.C. (Kontrola kvalitete) pri proizvodnji i monta&#382;i zavarenih konstrukcija, ostvarili smo dugogodi&scaron;nju i uspje&scaron;nu suradnju sa inspekcijskim ustanovama i klasifikacijskim dru&scaron;tvima (IPT RH; CRS; T&Uuml;V; LR; DNV; BV....).</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="scroller-outer">
+  <div class="scroller-stage" data-scroller>
+    <div class="wrap scroller-grid">
+      <div class="scroller-media">
+        <div class="scroller-image-holder" data-scroller-media>
+          <img src="media/image_before_4.jpg" alt="Mobile NDT laboratory vans">
+        </div>
+        <div class="scroller-image-holder" data-scroller-media>
+          <img class="sb-then" src="media/image_before_1.jpg" alt="Analog microscope inspection, archive photo">
+          <img class="sb-now" src="media/image_after_1.jpg" alt="Digital microscope inspection, present day">
+        </div>
+        <div class="scroller-image-holder" data-scroller-media>
+          <img src="media/image_before_3.jpg" alt="Hand die-stamping of certification marks">
+        </div>
+        <div class="scroller-image-holder" data-scroller-media>
+          <img src="media/image_before_2.jpg" alt="Inspectors working on structural scaffolding">
+        </div>
+      </div>
+      <div class="scroller-text-mask"><div class="scroller-text-track" data-scroller-track>
+        <div class="scroller-text-slide">
+          <div class="sb-tag"><span class="i18n-en">[ FIELD TESTING ]</span><span class="i18n-hr">[ TERENSKO ISPITIVANJE ]</span></div>
+          <h2><span class="i18n-en">Mobile labs, on site since day one</span><span class="i18n-hr">Pokretni laboratoriji, na terenu od samog po&#269;etka</span></h2>
+          <p><span class="i18n-en">Our &ldquo;Laboratorij za defektoskopiju&rdquo; vans carried non-destructive testing equipment directly to plants and construction sites &mdash; a field-first approach that's still core to how we work today.</span><span class="i18n-hr">Na&scaron;a vozila &bdquo;Laboratorija za defektoskopiju&ldquo; nosila su opremu za ispitivanje bez razaranja izravno na postrojenja i gradili&scaron;ta &mdash; pristup usmjeren na teren koji je i danas u sr&#382;i na&scaron;eg rada.</span></p>
+        </div>
+        <div class="scroller-text-slide">
+          <div class="sb-tag"><span class="i18n-en">[ LABORATORY ]</span><span class="i18n-hr">[ LABORATORIJ ]</span></div>
+          <h2><span class="i18n-en">From analog to digital microscopy</span><span class="i18n-hr">Od analogne do digitalne mikroskopije</span></h2>
+          <p><span class="i18n-en">The same metallurgical inspection work, decades apart &mdash; from a standalone optical microscope to a fully digital setup with live image capture and archiving.</span><span class="i18n-hr">Isti posao metalografskog ispitivanja, desetlje&#263;ima razmaknut &mdash; od samostalnog opti&#269;kog mikroskopa do potpuno digitalnog sustava sa snimanjem i arhiviranjem uzivo.</span></p>
+        </div>
+        <div class="scroller-text-slide">
+          <div class="sb-tag"><span class="i18n-en">[ CERTIFICATION ]</span><span class="i18n-hr">[ CERTIFICIRANJE ]</span></div>
+          <h2><span class="i18n-en">Every stamp, a signature</span><span class="i18n-hr">Svaki &#382;ig, potpis</span></h2>
+          <p><span class="i18n-en">Certification marks were &mdash; and still are &mdash; struck by hand, piece by piece. It's slow, deliberate work, and it's exactly why our certificates carry weight.</span><span class="i18n-hr">Oznake certificiranja su se &mdash; i danas se &mdash; utiskivale ru&#269;no, komad po komad. To je spor, pa&#382;ljiv rad, i upravo zato na&scaron;i certifikati imaju te&#382;inu.</span></p>
+        </div>
+        <div class="scroller-text-slide">
+          <div class="sb-tag"><span class="i18n-en">[ STRUCTURAL WORK ]</span><span class="i18n-hr">[ KONSTRUKCIJSKI RAD ]</span></div>
+          <h2><span class="i18n-en">Where the work actually happens</span><span class="i18n-hr">Gdje se posao stvarno odvija</span></h2>
+          <p><span class="i18n-en">Scaffolding, low light, tight schedules &mdash; our inspectors have always gone where the equipment is, not the other way around.</span><span class="i18n-hr">Skele, slabo osvjetljenje, kratki rokovi &mdash; na&scaron;i inspektori oduvijek idu tamo gdje je oprema, a ne obrnuto.</span></p>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</div>
+
+<div class="scroller-mobile">
+  <div class="wrap">
+    <div class="sm-slide">
+      <div class="sm-image"><img src="media/image_before_4.jpg" alt="Mobile NDT laboratory vans"></div>
+      <div class="sb-tag"><span class="i18n-en">[ FIELD TESTING ]</span><span class="i18n-hr">[ TERENSKO ISPITIVANJE ]</span></div>
+      <h2><span class="i18n-en">Mobile labs, on site since day one</span><span class="i18n-hr">Pokretni laboratoriji, na terenu od samog po&#269;etka</span></h2>
+      <p><span class="i18n-en">Our &ldquo;Laboratorij za defektoskopiju&rdquo; vans carried non-destructive testing equipment directly to plants and construction sites &mdash; a field-first approach that's still core to how we work today.</span><span class="i18n-hr">Na&scaron;a vozila &bdquo;Laboratorija za defektoskopiju&ldquo; nosila su opremu za ispitivanje bez razaranja izravno na postrojenja i gradili&scaron;ta &mdash; pristup usmjeren na teren koji je i danas u sr&#382;i na&scaron;eg rada.</span></p>
+    </div>
+    <div class="sm-slide">
+      <div class="sm-image sb-compare">
+        <img class="sb-then" src="media/image_before_1.jpg" alt="Analog microscope inspection, archive photo">
+        <img class="sb-now" src="media/image_after_1.jpg" alt="Digital microscope inspection, present day">
+      </div>
+      <div class="sb-tag"><span class="i18n-en">[ LABORATORY ]</span><span class="i18n-hr">[ LABORATORIJ ]</span></div>
+      <h2><span class="i18n-en">From analog to digital microscopy</span><span class="i18n-hr">Od analogne do digitalne mikroskopije</span></h2>
+      <p><span class="i18n-en">The same metallurgical inspection work, decades apart &mdash; from a standalone optical microscope to a fully digital setup with live image capture and archiving.</span><span class="i18n-hr">Isti posao metalografskog ispitivanja, desetlje&#263;ima razmaknut &mdash; od samostalnog opti&#269;kog mikroskopa do potpuno digitalnog sustava sa snimanjem i arhiviranjem uzivo.</span></p>
+    </div>
+    <div class="sm-slide">
+      <div class="sm-image"><img src="media/image_before_3.jpg" alt="Hand die-stamping of certification marks"></div>
+      <div class="sb-tag"><span class="i18n-en">[ CERTIFICATION ]</span><span class="i18n-hr">[ CERTIFICIRANJE ]</span></div>
+      <h2><span class="i18n-en">Every stamp, a signature</span><span class="i18n-hr">Svaki &#382;ig, potpis</span></h2>
+      <p><span class="i18n-en">Certification marks were &mdash; and still are &mdash; struck by hand, piece by piece. It's slow, deliberate work, and it's exactly why our certificates carry weight.</span><span class="i18n-hr">Oznake certificiranja su se &mdash; i danas se &mdash; utiskivale ru&#269;no, komad po komad. To je spor, pa&#382;ljiv rad, i upravo zato na&scaron;i certifikati imaju te&#382;inu.</span></p>
+    </div>
+    <div class="sm-slide">
+      <div class="sm-image"><img src="media/image_before_2.jpg" alt="Inspectors working on structural scaffolding"></div>
+      <div class="sb-tag"><span class="i18n-en">[ STRUCTURAL WORK ]</span><span class="i18n-hr">[ KONSTRUKCIJSKI RAD ]</span></div>
+      <h2><span class="i18n-en">Where the work actually happens</span><span class="i18n-hr">Gdje se posao stvarno odvija</span></h2>
+      <p><span class="i18n-en">Scaffolding, low light, tight schedules &mdash; our inspectors have always gone where the equipment is, not the other way around.</span><span class="i18n-hr">Skele, slabo osvjetljenje, kratki rokovi &mdash; na&scaron;i inspektori oduvijek idu tamo gdje je oprema, a ne obrnuto.</span></p>
+    </div>
+  </div>
+</div>
+
+<section class="pad-sm" data-bg-toggle>
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="reveal"><span class="i18n-en">Organization</span><span class="i18n-hr">Organizacija</span></h2>
+      <p class="reveal"><span class="i18n-en">How the institute is structured, department by department.</span><span class="i18n-hr">Kako je zavod ustrojen, po odjelima.</span></p>
+    </div>
+    <div class="org-chart-frame reveal">
+      <img src="media/organizacija.png" alt="TPK Zavod organizational chart">
+    </div>
+  </div>
+</section>
+
+<section class="pad-sm">
+  <div class="wrap">
+    <div class="people-block">
+      <h2 class="reveal"><span class="i18n-en">Our people</span><span class="i18n-hr">Ljudski resursi</span></h2>
+      <p class="reveal"><span class="i18n-en">TPK &mdash; Zavod d.o.o. and its 45 permanent employees aim to provide a quality service that satisfies our customers, while promoting the professional dignity of the technical profession.</span><span class="i18n-hr">TPK Zavod d.o.o. sa svojih 45 stalno zaposlenih djelatnika ima za cilj pru&#382;iti kvalitetnu uslugu radi postizanja zadovoljstva kupca uz promicanje profesionalnog digniteta tehni&#269;ke struke.</span></p>
+      <p class="reveal"><span class="i18n-en">Given how specialized our work is, beyond hands-on expertise our staff also hold formal qualifications and certifications, including:</span><span class="i18n-hr">S obzirom na specifi&#269;nost djelatnosti, osim specijalisti&#269;kih znanja i iskustva na poslovima koje obavljaju, na&scaron;i djelatnici raspola&#382;u i formalnim dokazima o stru&#269;nosti i osposobljenosti kao:</span></p>
+      <ul class="people-list reveal">
+        <li><span class="i18n-en">Licensed mechanical engineers</span><span class="i18n-hr">Ovla&scaron;teni in&#382;enjeri strojarstva</span></li>
+        <li><span class="i18n-en">European / international welding engineers (EWE/IWE)</span><span class="i18n-hr">Europski / me&#273;unarodni in&#382;enjeri zavarivanja (EWE/IWE)</span></li>
+        <li><span class="i18n-en">International welding inspectors (IWIP-C)</span><span class="i18n-hr">Me&#273;unarodni inspektori zavarivanja (IWIP-C)</span></li>
+        <li><span class="i18n-en">Non-destructive testing (NDT) specialists certified to HRN EN ISO 9712, per EN, ISO, ASME, ANSI, API and DIN standards</span><span class="i18n-hr">Specijalisti za ispitivanje metodama bez razaranja (NDT) prema HRN EN ISO 9712 u skladu s EN, ISO, ASME, ANSI, API i DIN normama</span></li>
+        <li><span class="i18n-en">Destructive testing (DT) specialists, per EN, ISO, ASTM standards and in-house methods</span><span class="i18n-hr">Specijalisti za ispitivanje razornim metodama (DT) u skladu s EN, ISO, ASTM normama i vlastitim metodama</span></li>
+        <li><span class="i18n-en">Anti-corrosion protection (AKZ) testing specialists, per EN, ISO, ASTM standards</span><span class="i18n-hr">Specijalisti za ispitivanje antikorozivne za&scaron;tite (AKZ) u skladu s EN, ISO, ASTM normama</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="pad-sm" data-bg-toggle>
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="reveal"><span class="i18n-en">Certifications &amp; accreditations</span><span class="i18n-hr">Certifikati i akreditacije</span></h2>
+      <p class="reveal"><span class="i18n-en">Recognition from classification societies and certification bodies, then and now.</span><span class="i18n-hr">Priznanja klasifikacijskih dru&scaron;tava i certifikacijskih tijela, neka&#273; i danas.</span></p>
+    </div>
+  </div>
+  <div class="cert-marquee">
+    <div class="cert-track">
+      <a class="cert-card" href="media/Bureau Veritas.jpg" target="_blank" rel="noopener"><img src="media/Bureau Veritas.jpg" alt="Bureau Veritas"><span>Bureau Veritas</span></a>
+      <a class="cert-card" href="media/Registar brodova.jpg" target="_blank" rel="noopener"><img src="media/Registar brodova.jpg" alt="Jugoslovenski registar brodova"><span>Jugoslovenski registar brodova</span></a>
+      <a class="cert-card" href="media/Rjesenje Sekretarijata.jpg" target="_blank" rel="noopener"><img src="media/Rjesenje Sekretarijata.jpg" alt="Rje&scaron;enje Sekretarijata"><span>Rje&scaron;enje Sekretarijata</span></a>
+      <a class="cert-card" href="media/Loyds register.jpg" target="_blank" rel="noopener"><img src="media/Loyds register.jpg" alt="Lloyd's Register of Shipping"><span>Lloyd's Register of Shipping</span></a>
+      <a class="cert-card" href="media/Det Norske Veritas.jpg" target="_blank" rel="noopener"><img src="media/Det Norske Veritas.jpg" alt="Det Norske Veritas"><span>Det Norske Veritas</span></a>
+      <a class="cert-card" href="media/Ovlasnica IMR.jpg" target="_blank" rel="noopener"><img src="media/Ovlasnica IMR.jpg" alt="Ovla&scaron;nica DZM-a za laboratorij IMR"><span>Ovla&scaron;nica DZM &mdash; IMR</span></a>
+      <a class="cert-card cert-card--pdf" href="media/SGS_certifikat_ISO_9001.pdf" target="_blank" rel="noopener"><img class="cc-icon" src="media/pdf.png" alt="PDF"><span>SGS ISO 9001</span></a>
+      <a class="cert-card cert-card--pdf" href="media/SGS_certifikat_ISO_14001.pdf" target="_blank" rel="noopener"><img class="cc-icon" src="media/pdf.png" alt="PDF"><span>SGS ISO 14001</span></a>
+      <a class="cert-card cert-card--pdf" href="media/SGS_certifikat_ISO_29001.pdf" target="_blank" rel="noopener"><img class="cc-icon" src="media/pdf.png" alt="PDF"><span>SGS ISO 29001</span></a>
+      <a class="cert-card cert-card--pdf" href="media/SGS_certifikat_ISO_45001.pdf" target="_blank" rel="noopener"><img class="cc-icon" src="media/pdf.png" alt="PDF"><span>SGS ISO 45001</span></a>
+      <a class="cert-card cert-card--pdf" href="media/TUV_certifiakt_SCC.pdf" target="_blank" rel="noopener"><img class="cc-icon" src="media/pdf.png" alt="PDF"><span>T&Uuml;V SCC</span></a>
+      <a class="cert-card cert-card--pdf" href="media/TPK-LIBR_Akreditacija_broj_1085.pdf" target="_blank" rel="noopener"><img class="cc-icon" src="media/pdf.png" alt="PDF"><span>LIBR &mdash; Akreditacija 1085</span></a>
+      <a class="cert-card" href="media/Bureau Veritas.jpg" target="_blank" rel="noopener" aria-hidden="true"><img src="media/Bureau Veritas.jpg" alt=""><span>Bureau Veritas</span></a>
+      <a class="cert-card" href="media/Registar brodova.jpg" target="_blank" rel="noopener" aria-hidden="true"><img src="media/Registar brodova.jpg" alt=""><span>Jugoslovenski registar brodova</span></a>
+      <a class="cert-card" href="media/Rjesenje Sekretarijata.jpg" target="_blank" rel="noopener" aria-hidden="true"><img src="media/Rjesenje Sekretarijata.jpg" alt=""><span>Rje&scaron;enje Sekretarijata</span></a>
+      <a class="cert-card" href="media/Loyds register.jpg" target="_blank" rel="noopener" aria-hidden="true"><img src="media/Loyds register.jpg" alt=""><span>Lloyd's Register of Shipping</span></a>
+      <a class="cert-card" href="media/Det Norske Veritas.jpg" target="_blank" rel="noopener" aria-hidden="true"><img src="media/Det Norske Veritas.jpg" alt=""><span>Det Norske Veritas</span></a>
+      <a class="cert-card" href="media/Ovlasnica IMR.jpg" target="_blank" rel="noopener" aria-hidden="true"><img src="media/Ovlasnica IMR.jpg" alt=""><span>Ovla&scaron;nica DZM &mdash; IMR</span></a>
+      <a class="cert-card cert-card--pdf" href="media/SGS_certifikat_ISO_9001.pdf" target="_blank" rel="noopener" aria-hidden="true"><img class="cc-icon" src="media/pdf.png" alt="PDF"><span>SGS ISO 9001</span></a>
+      <a class="cert-card cert-card--pdf" href="media/SGS_certifikat_ISO_14001.pdf" target="_blank" rel="noopener" aria-hidden="true"><img class="cc-icon" src="media/pdf.png" alt="PDF"><span>SGS ISO 14001</span></a>
+      <a class="cert-card cert-card--pdf" href="media/SGS_certifikat_ISO_29001.pdf" target="_blank" rel="noopener" aria-hidden="true"><img class="cc-icon" src="media/pdf.png" alt="PDF"><span>SGS ISO 29001</span></a>
+      <a class="cert-card cert-card--pdf" href="media/SGS_certifikat_ISO_45001.pdf" target="_blank" rel="noopener" aria-hidden="true"><img class="cc-icon" src="media/pdf.png" alt="PDF"><span>SGS ISO 45001</span></a>
+      <a class="cert-card cert-card--pdf" href="media/TUV_certifiakt_SCC.pdf" target="_blank" rel="noopener" aria-hidden="true"><img class="cc-icon" src="media/pdf.png" alt="PDF"><span>T&Uuml;V SCC</span></a>
+      <a class="cert-card cert-card--pdf" href="media/TPK-LIBR_Akreditacija_broj_1085.pdf" target="_blank" rel="noopener" aria-hidden="true"><img class="cc-icon" src="media/pdf.png" alt="PDF"><span>LIBR &mdash; Akreditacija 1085</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="pad section-light" data-header-toggle>
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="reveal"><span class="i18n-en">What we stand for</span><span class="i18n-hr">Za &scaron;to se zala&#382;emo</span></h2>
+      <p class="reveal"><span class="i18n-en">Our mission, in three commitments.</span><span class="i18n-hr">Na&scaron;a misija u tri obveze.</span></p>
+    </div>
+    <div class="mission-grid">
+      <div class="mission-item reveal">
+        <div class="mnum">01</div>
+        <p><span class="i18n-en">Provide services in line with our customers' needs and to their satisfaction, while promoting knowledge and defending the dignity of the technical profession.</span><span class="i18n-hr">Pru&#382;ati usluge u skladu sa &#382;eljama i na zadovoljstvo na&scaron;ih kupaca, uz promicanje znanja i obranu digniteta tehni&#269;ke struke.</span></p>
+      </div>
+      <div class="mission-item reveal">
+        <div class="mnum">02</div>
+        <p><span class="i18n-en">Develop and retain competent people, valuing their enthusiasm and technical judgement.</span><span class="i18n-hr">Razvijati i zadr&#382;ati kompetentne ljude, cijene&#263;i njihov entuzijazam i stru&#269;nu prosudbu.</span></p>
+      </div>
+      <div class="mission-item reveal">
+        <div class="mnum">03</div>
+        <p><span class="i18n-en">Continuously improve the company's business results, without compromising on the quality of a single report or certificate.</span><span class="i18n-hr">Kontinuirano pobolj&scaron;avati poslovne rezultate poduze&#263;a, bez ustupaka u kvaliteti ijednog izvje&scaron;taja ili certifikata.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-block">
+  <div class="wrap">
+    <div class="cta-flex">
+      <div>
+        <div class="cta-note reveal"><span class="i18n-en">We reply within one business day</span><span class="i18n-hr">Odgovaramo u roku jednog radnog dana</span></div>
+        <h2 class="reveal"><span class="i18n-en">See what we actually do</span><span class="i18n-hr">Pogledajte &scaron;to zapravo radimo</span></h2>
+        <p class="reveal"><span class="i18n-en">Design, manufacturing, assembly and exploitation support — the four stages we cover end to end.</span><span class="i18n-hr">Projektiranje, izrada, monta&#382;a i podr&scaron;ka u eksploataciji — &#269;etiri faze koje pokrivamo od po&#269;etka do kraja.</span></p>
+      </div>
+      <a class="btn reveal" href="contact.html"><span><span class="i18n-en">Contact us</span><span class="i18n-hr">Kontaktirajte nas</span></span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="margin-bottom:16px;"><img src="media/Logo.png" alt="TPK Zavod"><small><span class="i18n-en">Institute for Energy &amp; Process Equipment</span><span class="i18n-hr">Zavod za energetsku i procesnu opremu</span></small></div>
+        <p style="color:var(--text-dim);font-size:13.5px;max-width:30ch;line-height:1.6;"><span class="i18n-en">Institute for energy and process equipment. Design, manufacturing, assembly, exploitation, testing, certification.</span><span class="i18n-hr">Zavod za energetsku i procesnu opremu. Projektiranje, izrada, montaža, eksploatacija, ispitivanje, certificiranje.</span></p>
+      </div>
+      <div>
+        <h5><span class="i18n-en">Pages</span><span class="i18n-hr">Stranice</span></h5>
+        <ul>
+          <li><a href="about.html"><span class="i18n-en">About</span><span class="i18n-hr">O nama</span></a></li>
+          <li><a href="activities.html"><span class="i18n-en">Activities</span><span class="i18n-hr">Djelatnosti</span></a></li>
+          <li><a href="quality.html"><span class="i18n-en">Quality system</span><span class="i18n-hr">Sustav kvalitete</span></a></li>
+          <li><a href="references.html"><span class="i18n-en">References</span><span class="i18n-hr">Reference</span></a></li>
+          <li><a href="contact.html"><span class="i18n-en">Contact</span><span class="i18n-hr">Kontakt</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h5><span class="i18n-en">Contact</span><span class="i18n-hr">Kontakt</span></h5>
+        <ul>
+          <li><a href="mailto:tpk-zavod@tpk-zavod.hr">tpk-zavod@tpk-zavod.hr</a></li>
+          <li><a href="tel:+38512409628">+385 1 2409 628</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5><span class="i18n-en">Location</span><span class="i18n-hr">Lokacija</span></h5>
+        <ul>
+          <li>Slavonska avenija 20</li>
+          <li>10000 Zagreb, <span class="i18n-en">Croatia</span><span class="i18n-hr">Hrvatska</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 TPK &mdash; Zavod d.o.o. <span class="i18n-en">All rights reserved.</span><span class="i18n-hr">Sva prava pridržana.</span></span>
+      <span>Design and Development &middot; AD ASTRA, OBRT ZA RA&Ccaron;UNALNO PROGRAMIRANJE I USLUGE</span>
+    </div>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script type="module" src="js/about.js"></script>
+</body>
+</html>

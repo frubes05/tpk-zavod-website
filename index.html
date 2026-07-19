@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>if(sessionStorage.getItem('tpkNav')==='1'){document.documentElement.classList.add('nav-arrival');if(sessionStorage.getItem('tpkNavLight')==='1'){document.documentElement.classList.add('nav-light');}}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TPK — Zavod za energetsku i procesnu opremu</title>
+<meta name="description" content="Sixty years designing, building, inspecting and certifying energy and process equipment. Institute for Energy and Process Equipment, Zagreb.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="media/Logo.ico" type="image/x-icon">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<script>document.body.className = 'lang-' + (localStorage.getItem('tpkLang') || 'en');</script>
+<div id="scroll-progress"></div>
+<div id="cursor-dot"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(0 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(45 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(90 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(135 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(180 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(225 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(270 12 12)" fill="currentColor"/>
+  <rect x="10.8" y="0.6" width="2.4" height="3.6" rx="0.5" transform="rotate(315 12 12)" fill="currentColor"/>
+  <circle cx="12" cy="12" r="6" fill="none" stroke="currentColor" stroke-width="2.1"/>
+  <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+</svg></div>
+<div id="cursor-ring"></div>
+<div class="grid-bg"></div>
+<div id="page-transition">
+  <div class="pt-inner">
+    <div class="pt-eyebrow"><span class="i18n-en">SECTION //</span><span class="i18n-hr">ODJELJAK //</span></div>
+    <div class="pt-title" id="pt-title"><span class="i18n-en">Home</span><span class="i18n-hr">Naslovna</span></div>
+    <div class="pt-line"><span></span></div>
+  </div>
+</div>
+<div id="preloader">
+  <div class="plabel"><span class="i18n-en">TPK // SYSTEM CHECK</span><span class="i18n-hr">TPK // PROVJERA SUSTAVA</span></div>
+  <div class="pct"><span id="pctnum">0</span>%</div>
+  <div class="bar-track"><div class="bar-fill" id="barfill"></div></div>
+  <div class="plabel" id="ploadmsg"><span class="i18n-en">CALIBRATING SENSORS...</span><span class="i18n-hr">KALIBRACIJA SENZORA...</span></div>
+</div>
+<header>
+  <a class="logo" href="index.html"><img src="media/Logo.png" alt="TPK Zavod"><small><span class="i18n-en">Institute for Energy &amp; Process Equipment</span><span class="i18n-hr">Zavod za energetsku i procesnu opremu</span></small></a>
+  <nav class="mainnav">
+    <a href="index.html" class="active"><span class="i18n-en">Home</span><span class="i18n-hr">Naslovna</span></a>
+    <a href="about.html"><span class="i18n-en">About</span><span class="i18n-hr">O nama</span></a>
+    <a href="activities.html"><span class="i18n-en">Activities</span><span class="i18n-hr">Djelatnosti</span></a>
+    <a href="quality.html"><span class="i18n-en">Quality System</span><span class="i18n-hr">Sustav kvalitete</span></a>
+    <a href="references.html"><span class="i18n-en">References</span><span class="i18n-hr">Reference</span></a>
+    <a href="contact.html"><span class="i18n-en">Contact</span><span class="i18n-hr">Kontakt</span></a>
+  </nav>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button type="button" class="lang-toggle-btn" aria-label="Language" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 6 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-6-3.8-9s1.3-6.3 3.8-9z"/></svg>
+      </button>
+      <div class="lang-dropdown">
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="hr">HR</button>
+      </div>
+    </div>
+    <a class="btn" href="contact.html"><span><span class="i18n-en">Get in touch</span><span class="i18n-hr">Kontaktirajte nas</span></span></a>
+    <div class="burger"><span></span><span></span><span></span></div>
+  </div>
+</header>
+<div id="mobile-menu">
+  <div class="mm-top">
+    <a class="logo" href="index.html"><img src="media/Logo.png" alt="TPK Zavod"><small><span class="i18n-en">Institute for Energy &amp; Process Equipment</span><span class="i18n-hr">Zavod za energetsku i procesnu opremu</span></small></a>
+    <div class="mm-close" role="button" aria-label="Close menu"><span></span><span></span></div>
+  </div>
+  <nav class="mm-nav">
+    <a href="index.html" class="active"><span class="i18n-en">Home</span><span class="i18n-hr">Naslovna</span></a>
+    <a href="about.html"><span class="i18n-en">About</span><span class="i18n-hr">O nama</span></a>
+    <a href="activities.html"><span class="i18n-en">Activities</span><span class="i18n-hr">Djelatnosti</span></a>
+    <a href="quality.html"><span class="i18n-en">Quality System</span><span class="i18n-hr">Sustav kvalitete</span></a>
+    <a href="references.html"><span class="i18n-en">References</span><span class="i18n-hr">Reference</span></a>
+    <a href="contact.html"><span class="i18n-en">Contact</span><span class="i18n-hr">Kontakt</span></a>
+  </nav>
+  <div class="mm-bottom">
+    <div class="mm-lang">
+      <button type="button" class="lang-btn" data-lang="en">EN</button>/<button type="button" class="lang-btn" data-lang="hr">HR</button>
+    </div>
+    <a href="mailto:tpk-zavod@tpk-zavod.hr">tpk-zavod@tpk-zavod.hr</a>
+    <a href="tel:+38512409628">+385 1 2409 628</a>
+  </div>
+</div>
+<main>
+
+<section class="hero">
+  <div class="hero-video-wrap">
+    <video class="hero-video" autoplay muted loop playsinline poster="media/hero-poster.jpg">
+      <source src="media/hero-loop.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="wrap">
+    <div class="eyebrow"><span class="i18n-en">Institute for Energy &amp; Process Equipment &mdash; Zagreb</span><span class="i18n-hr">Zavod za energetsku i procesnu opremu &mdash; Zagreb</span></div>
+    <h1>
+      <span class="line"><span class="reveal-txt"><span class="i18n-en">We test what</span><span class="i18n-hr">Ispitujemo ono</span></span></span>
+      <span class="line"><span class="reveal-txt"><span class="i18n-en">has to hold.</span><span class="i18n-hr">&scaron;to mora izdr&#382;ati.</span></span></span>
+    </h1>
+    <p class="hero-sub"><span class="i18n-en">Sixty years of designing, building, and certifying equipment that runs under pressure, heat and continuous load &mdash; from steam boilers to today's energy and process plants.</span><span class="i18n-hr">&Scaron;ezdeset godina projektiranja, izrade i certificiranja opreme koja radi pod tlakom, temperaturom i trajnim optere&#263;enjem &mdash; od parnih kotlova do dana&scaron;njih energetskih i procesnih postrojenja.</span></p>
+    <div class="hero-cta">
+      <a class="btn" href="activities.html"><span><span class="i18n-en">Our activities</span><span class="i18n-hr">Na&scaron;e djelatnosti</span></span></a>
+      <a class="ghost" href="quality.html"><span class="i18n-en">View accreditations &rarr;</span><span class="i18n-hr">Pogledajte akreditacije &rarr;</span></a>
+    </div>
+    <div class="waveform-wrap">
+      <div class="cap"><span><span class="i18n-en">Ultrasonic thickness scan / live readout</span><span class="i18n-hr">Ultrazvu&#269;no mjerenje debljine / u&#382;ivo o&#269;itanje</span></span><span><span class="i18n-en">SIGNAL STABLE</span><span class="i18n-hr">SIGNAL STABILAN</span></span></div>
+      <svg viewBox="0 0 1000 90" preserveAspectRatio="none">
+        <path class="baseline" d="M0,45 L1000,45"/>
+        <path class="wave" id="wavepath" d=""/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="pad">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="i18n-en">About TPK</span><span class="i18n-hr">O nama</span></div>
+    <p class="about-lede reveal"><span class="i18n-en">What began as the <b>R&amp;D department</b> inside a steam boiler factory is today an independent institute &mdash; with the people, laboratories and mobile equipment to carry a piece of energy or process equipment from first drawing to certified, in-service asset.</span><span class="i18n-hr">Ono &scaron;to je po&#269;elo kao <b>Odjel za razvoj</b> unutar tvornice parnih kotlova, danas je samostalan zavod &mdash; s ljudima, laboratorijima i pokretnom opremom koji energetsku ili procesnu opremu prate od prve skice do certificiranog, pogonskog ure&#273;aja.</span> <a href="about.html" style="color:var(--accent);border-bottom:1px solid var(--accent-dim);"><span class="i18n-en">Read our story &rarr;</span><span class="i18n-hr">Pro&#269;itajte na&scaron;u pri&#269;u &rarr;</span></a></p>
+
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-num"><span class="i18n-en">STAGE 01</span><span class="i18n-hr">FAZA 01</span></div>
+        <h3><span class="i18n-en">R&amp;D department</span><span class="i18n-hr">Odjel za razvoj</span></h3>
+        <p><span class="i18n-en">Founded inside &ldquo;TPK&rdquo; &mdash; Tvornica Parnih Kotlova, the steam boiler factory &mdash; to develop and qualify the equipment the plant built.</span><span class="i18n-hr">Osnovan unutar &bdquo;TPK&ldquo; &mdash; Tvornice parnih kotlova &mdash; radi razvoja i provjere opreme koju je tvornica proizvodila.</span></p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-num"><span class="i18n-en">STAGE 02 &middot; 1989</span><span class="i18n-hr">FAZA 02 &middot; 1989.</span></div>
+        <h3><span class="i18n-en">Independent institute</span><span class="i18n-hr">Samostalan zavod</span></h3>
+        <p><span class="i18n-en">Registered as its own legal and business entity on 29 December 1989, free to serve any manufacturer, operator or plant in the sector.</span><span class="i18n-hr">Registriran kao samostalan pravni i poslovni subjekt 29. prosinca 1989., slobodan sura&#273;ivati s bilo kojim proizvo&#273;a&#269;em, operaterom ili postrojenjem u struci.</span></p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-num"><span class="i18n-en">STAGE 03</span><span class="i18n-hr">FAZA 03</span></div>
+        <h3><span class="i18n-en">Full-cycle partner</span><span class="i18n-hr">Partner za cijeli &#382;ivotni ciklus</span></h3>
+        <p><span class="i18n-en">Today: design, manufacture, assembly, exploitation and testing under one roof, backed by nine active accreditations and certifications.</span><span class="i18n-hr">Danas: projektiranje, izrada, monta&#382;a, eksploatacija i ispitivanje pod istim krovom, uz devet aktivnih akreditacija i certifikata.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section class="pad">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="reveal"><span class="i18n-en">Activities</span><span class="i18n-hr">Djelatnosti</span></h2>
+      <p class="reveal"><span class="i18n-en">We own the equipment lifecycle end to end &mdash; from a stamped drawing to a certificate still valid twenty years later.</span><span class="i18n-hr">Pratimo cijeli &#382;ivotni ciklus opreme &mdash; od ovjerenog nacrta do certifikata koji vrijedi i dvadeset godina kasnije.</span> <a href="activities.html" style="color:var(--accent);"><span class="i18n-en">See all activities &rarr;</span><span class="i18n-hr">Pogledajte sve djelatnosti &rarr;</span></a></p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card reveal">
+        <div><div class="svc-num">01</div><svg class="svc-icon" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M21 7v6M21 7h-6"/></svg></div>
+        <div><h3><span class="i18n-en">Design &amp; engineering</span><span class="i18n-hr">Projektiranje i in&#382;enjering</span></h3><p><span class="i18n-en">Calculation, drawings and technical documentation matched to real operating conditions.</span><span class="i18n-hr">Prora&#269;uni, nacrti i tehni&#269;ka dokumentacija uskla&#273;eni sa stvarnim radnim uvjetima.</span></p></div>
+      </div>
+      <div class="svc-card reveal">
+        <div><div class="svc-num">02</div><svg class="svc-icon" viewBox="0 0 24 24"><path d="M4 20l4-4 12-12 3 3-12 12-4 4H4v-3z"/></svg></div>
+        <div><h3><span class="i18n-en">Manufacturing</span><span class="i18n-hr">Izrada</span></h3><p><span class="i18n-en">Production under a documented quality system, from material intake to final inspection.</span><span class="i18n-hr">Proizvodnja pod dokumentiranim sustavom kvalitete, od zaprimanja materijala do zavr&scaron;ne kontrole.</span></p></div>
+      </div>
+      <div class="svc-card reveal">
+        <div><div class="svc-num">03</div><svg class="svc-icon" viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></div>
+        <div><h3><span class="i18n-en">Assembly</span><span class="i18n-hr">Monta&#382;a</span></h3><p><span class="i18n-en">On-site construction and installation, supervised by our own engineers through commissioning.</span><span class="i18n-hr">Izgradnja i monta&#382;a na terenu, uz nadzor na&scaron;ih in&#382;enjera sve do pu&scaron;tanja u pogon.</span></p></div>
+      </div>
+      <div class="svc-card reveal">
+        <div><div class="svc-num">04</div><svg class="svc-icon" viewBox="0 0 24 24"><path d="M12 8v4l3 3M12 2a10 10 0 100 20 10 10 0 000-20z"/></svg></div>
+        <div><h3><span class="i18n-en">Exploitation support</span><span class="i18n-hr">Podr&scaron;ka u eksploataciji</span></h3><p><span class="i18n-en">In-service inspection and condition monitoring &mdash; keeping certification and reality in sync.</span><span class="i18n-hr">Pregledi u pogonu i pra&#263;enje stanja &mdash; kako bi certifikat i stvarno stanje uvijek bili uskla&#273;eni.</span></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" style="background:var(--bg-panel-2);" data-bg-toggle>
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="reveal"><span class="i18n-en">Numbers you can audit</span><span class="i18n-hr">Brojke koje mo&#382;ete provjeriti</span></h2>
+      <p class="reveal"><span class="i18n-en">Every figure below sits behind an accreditation, a certificate register, or a signed report &mdash; not a marketing claim.</span><span class="i18n-hr">Iza svake brojke stoji akreditacija, registar certifikata ili potpisano izvje&scaron;će &mdash; a ne marketin&scaron;ka tvrdnja.</span></p>
+    </div>
+    <div class="stats-row cols-4">
+      <div class="stat reveal"><div class="num"><span data-count="60" id="stat1">0</span>+</div><div class="lbl"><span class="i18n-en">Years of tradition</span><span class="i18n-hr">Godina tradicije</span></div></div>
+      <div class="stat reveal"><div class="num"><span data-count="9" id="stat2">0</span></div><div class="lbl"><span class="i18n-en">Accreditations &amp; certifications</span><span class="i18n-hr">Akreditacija i certifikata</span></div></div>
+      <div class="stat reveal"><div class="num"><span data-count="120" id="stat3">0</span>k+</div><div class="lbl"><span class="i18n-en">NDT test reports issued</span><span class="i18n-hr">Izdanih NDT izvje&scaron;taja</span></div></div>
+      <div class="stat reveal"><div class="num"><span data-count="3500" id="stat4">0</span>+</div><div class="lbl"><span class="i18n-en">Expert condition reports</span><span class="i18n-hr">Stru&#269;nih elaborata o stanju</span></div></div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="margin-bottom:16px;"><img src="media/Logo.png" alt="TPK Zavod"><small><span class="i18n-en">Institute for Energy &amp; Process Equipment</span><span class="i18n-hr">Zavod za energetsku i procesnu opremu</span></small></div>
+        <p style="color:var(--text-dim);font-size:13.5px;max-width:30ch;line-height:1.6;"><span class="i18n-en">Institute for energy and process equipment. Design, manufacturing, assembly, exploitation, testing, certification.</span><span class="i18n-hr">Zavod za energetsku i procesnu opremu. Projektiranje, izrada, montaža, eksploatacija, ispitivanje, certificiranje.</span></p>
+      </div>
+      <div>
+        <h5><span class="i18n-en">Pages</span><span class="i18n-hr">Stranice</span></h5>
+        <ul>
+          <li><a href="about.html"><span class="i18n-en">About</span><span class="i18n-hr">O nama</span></a></li>
+          <li><a href="activities.html"><span class="i18n-en">Activities</span><span class="i18n-hr">Djelatnosti</span></a></li>
+          <li><a href="quality.html"><span class="i18n-en">Quality system</span><span class="i18n-hr">Sustav kvalitete</span></a></li>
+          <li><a href="references.html"><span class="i18n-en">References</span><span class="i18n-hr">Reference</span></a></li>
+          <li><a href="contact.html"><span class="i18n-en">Contact</span><span class="i18n-hr">Kontakt</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h5><span class="i18n-en">Contact</span><span class="i18n-hr">Kontakt</span></h5>
+        <ul>
+          <li><a href="mailto:tpk-zavod@tpk-zavod.hr">tpk-zavod@tpk-zavod.hr</a></li>
+          <li><a href="tel:+38512409628">+385 1 2409 628</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5><span class="i18n-en">Location</span><span class="i18n-hr">Lokacija</span></h5>
+        <ul>
+          <li>Slavonska avenija 20</li>
+          <li>10000 Zagreb, <span class="i18n-en">Croatia</span><span class="i18n-hr">Hrvatska</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 TPK &mdash; Zavod d.o.o. <span class="i18n-en">All rights reserved.</span><span class="i18n-hr">Sva prava pridržana.</span></span>
+      <span>Design and Development &middot; AD ASTRA, OBRT ZA RA&Ccaron;UNALNO PROGRAMIRANJE I USLUGE</span>
+    </div>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script type="module" src="js/index.js"></script>
+</body>
+</html>
