@@ -9,6 +9,12 @@ class HeroIntro {
     if(this.heroVideo && window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches){
       this.heroVideo.removeAttribute("autoplay");
       this.heroVideo.pause();
+    } else if(this.heroVideo){
+      /* many mobile browsers (data saver / low power mode) only honor a
+         script-triggered play() and silently ignore the declarative
+         autoplay attribute — calling it explicitly is the reliable path. */
+      var playPromise = this.heroVideo.play();
+      if(playPromise && playPromise.catch){ playPromise.catch(function(){}); }
     }
 
     if(this.wavePath){
