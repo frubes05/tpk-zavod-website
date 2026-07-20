@@ -61,6 +61,12 @@ class HeroIntro {
 
     if(hint){ hint.addEventListener('click', attempt); }
 
+    /* extra retries timed to the preloader's own 0→100% counting sequence
+       (~2.1s count + ~1.1s fade-out) — covers the case where the earlier
+       rejection was just "no data buffered yet" rather than a hard OS
+       block, which by then is much less likely to still be true. */
+    [800, 2100, 3300].forEach(function(ms){ setTimeout(attempt, ms); });
+
     attempt();
     video.addEventListener('loadeddata', attempt);
     video.addEventListener('canplay', attempt);
