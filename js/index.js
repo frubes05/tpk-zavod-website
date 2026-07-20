@@ -21,23 +21,35 @@ class HeroIntro {
     }
   }
 
-  /* Force silent, looping autoplay. Some mobile browsers won't trust the
-     HTML `muted` attribute alone for autoplay eligibility, so `muted` and
-     `defaultMuted` are also set as JS properties before calling play(). If
-     the browser still blocks it outright, a one-time listener retries on
-     the very first touch/click anywhere on the page — no visible play
-     button is ever shown, it just starts silently the moment it can. */
+  /* Force silent, looping autoplay — no visible "tap to play" button ever.
+     Some mobile browsers won't trust the HTML `muted` attribute alone for
+     autoplay eligibility, so `muted`/`defaultMuted` are also set as JS
+     properties. The very first play() call can still get rejected simply
+     because no video data has buffered yet on a real (non-instant)
+     connection — that's not a permission block, just "not ready", so it's
+     retried automatically as data actually arrives (loadeddata/canplay),
+     with a touch/click listener only as a last-resort fallback if the
+     browser is blocking it outright. */
   static forcePlay(video){
     video.muted = true;
     video.defaultMuted = true;
-    var attempt = function(){ var p = video.play(); if(p && p.catch){ p.catch(function(){}); } };
-    attempt();
-    var retry = function(){
-      if(!video.paused) return;
-      attempt();
+    video.setAttribute('preload', 'auto');
+
+    var retrying = false;
+    var attempt = function(){
+      if(!video.paused || retrying) return;
+      retrying = true;
+      var p = video.play();
+      if(p && p.then){ p.then(function(){ retrying = false; }, function(){ retrying = false; }); }
+      else { retrying = false; }
     };
-    document.addEventListener('touchstart', retry, { once:true, passive:true });
-    document.addEventListener('click', retry, { once:true });
+
+    attempt();
+    video.addEventListener('loadeddata', attempt);
+    video.addEventListener('canplay', attempt);
+    video.addEventListener('canplaythrough', attempt);
+    document.addEventListener('touchstart', attempt, { passive:true });
+    document.addEventListener('click', attempt);
   }
 
   static buildWave(){
