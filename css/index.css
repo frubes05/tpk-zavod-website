@@ -25,6 +25,21 @@
     display: block;
 }
 
+/* Suppresses the browser's own centered "play" overlay that Chrome/WebKit
+   inject automatically on a paused muted video (independent of the
+   `controls` attribute) — the styled .hero-video-hint button is the only
+   play affordance we want shown when autoplay is actually blocked. */
+.hero-video-wrap video::-webkit-media-controls,
+.hero-video-wrap video::-webkit-media-controls-panel,
+.hero-video-wrap video::-webkit-media-controls-play-button,
+.hero-video-wrap video::-webkit-media-controls-start-playback-button,
+.hero-video-wrap video::-webkit-media-controls-overlay-play-button {
+    display: none !important;
+    -webkit-appearance: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
 .hero-video-wrap::after {
     content: "";
     position: absolute;
