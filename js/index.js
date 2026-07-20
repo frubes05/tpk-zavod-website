@@ -10,7 +10,7 @@ class HeroIntro {
       this.heroVideo.removeAttribute("autoplay");
       this.heroVideo.pause();
     } else if(this.heroVideo){
-      HeroIntro.forcePlay(this.heroVideo);
+      HeroIntro.forcePlay(this.heroVideo, document.querySelector(".hero-video-hint"));
     }
 
     if(this.wavePath){
@@ -30,7 +30,7 @@ class HeroIntro {
      retried automatically as data actually arrives (loadeddata/canplay),
      with a touch/click listener only as a last-resort fallback if the
      browser is blocking it outright. */
-  static forcePlay(video){
+  static forcePlay(video, hint){
     video.muted = true;
     video.defaultMuted = true;
     video.setAttribute('preload', 'auto');
@@ -40,14 +40,32 @@ class HeroIntro {
       if(!video.paused || retrying) return;
       retrying = true;
       var p = video.play();
-      if(p && p.then){ p.then(function(){ retrying = false; }, function(){ retrying = false; }); }
-      else { retrying = false; }
+      if(p && p.then){
+        p.then(function(){ retrying = false; hideHint(); }, function(){ retrying = false; maybeShowHint(); });
+      } else {
+        retrying = false;
+      }
     };
+
+    var showTimer = null;
+    var maybeShowHint = function(){
+      if(!hint || showTimer) return;
+      /* only surface the hint once a real block is likely, not on the
+         very first "not ready yet" rejection right at page load */
+      showTimer = setTimeout(function(){ if(video.paused){ hint.classList.add('show'); } }, 1200);
+    };
+    var hideHint = function(){
+      if(hint){ hint.classList.remove('show'); }
+      if(showTimer){ clearTimeout(showTimer); showTimer = null; }
+    };
+
+    if(hint){ hint.addEventListener('click', attempt); }
 
     attempt();
     video.addEventListener('loadeddata', attempt);
     video.addEventListener('canplay', attempt);
     video.addEventListener('canplaythrough', attempt);
+    video.addEventListener('playing', hideHint);
     document.addEventListener('touchstart', attempt, { passive:true });
     document.addEventListener('click', attempt);
   }

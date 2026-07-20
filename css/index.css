@@ -32,6 +32,41 @@
     background: linear-gradient(180deg, rgba(10, 12, 14, .55) 0%, rgba(10, 12, 14, .82) 65%, var(--bg) 100%);
 }
 
+/* Only shown (via JS) when autoplay was genuinely blocked by the browser/OS
+   (e.g. iOS Low Power Mode, Chrome Data Saver) — styled to look like an
+   intentional part of the design rather than a broken video. */
+.hero-video-hint {
+    position: absolute;
+    z-index: 2;
+    bottom: 24px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(10, 12, 14, .7);
+    border: 1px solid var(--line);
+    color: var(--text);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity .3s ease, transform .3s ease, visibility .3s, border-color .2s, color .2s;
+}
+.hero-video-hint.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.hero-video-hint:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
 .hero .wrap {
     width: 100%;
     position: relative;
