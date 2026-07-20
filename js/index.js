@@ -10,11 +10,7 @@ class HeroIntro {
       this.heroVideo.removeAttribute("autoplay");
       this.heroVideo.pause();
     } else if(this.heroVideo){
-      /* many mobile browsers (data saver / low power mode) only honor a
-         script-triggered play() and silently ignore the declarative
-         autoplay attribute — calling it explicitly is the reliable path. */
-      var playPromise = this.heroVideo.play();
-      if(playPromise && playPromise.catch){ playPromise.catch(function(){}); }
+      HeroIntro.forcePlay(this.heroVideo);
     }
 
     if(this.wavePath){
@@ -23,6 +19,25 @@ class HeroIntro {
       this.wavePath.style.strokeDasharray = len;
       this.wavePath.style.strokeDashoffset = len;
     }
+  }
+
+  /* Force silent, looping autoplay. Some mobile browsers won't trust the
+     HTML `muted` attribute alone for autoplay eligibility, so `muted` and
+     `defaultMuted` are also set as JS properties before calling play(). If
+     the browser still blocks it outright, a one-time listener retries on
+     the very first touch/click anywhere on the page — no visible play
+     button is ever shown, it just starts silently the moment it can. */
+  static forcePlay(video){
+    video.muted = true;
+    video.defaultMuted = true;
+    var attempt = function(){ var p = video.play(); if(p && p.catch){ p.catch(function(){}); } };
+    attempt();
+    var retry = function(){
+      if(!video.paused) return;
+      attempt();
+    };
+    document.addEventListener('touchstart', retry, { once:true, passive:true });
+    document.addEventListener('click', retry, { once:true });
   }
 
   static buildWave(){
