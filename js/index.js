@@ -6,10 +6,10 @@ class HeroIntro {
     this.wavePath = document.getElementById('wavepath');
     this.heroVideo = document.querySelector(".hero-video");
 
-    if(this.heroVideo && window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches){
-      this.heroVideo.removeAttribute("autoplay");
-      this.heroVideo.pause();
-    } else if(this.heroVideo){
+    // Always autoplay the silent, looping background video — even under
+    // prefers-reduced-motion, which previously stripped autoplay and paused
+    // the video, leaving a blank hero for those users.
+    if(this.heroVideo){
       HeroIntro.forcePlay(this.heroVideo, document.querySelector(".hero-video-hint"));
     }
 
