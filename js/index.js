@@ -67,6 +67,17 @@ class HeroIntro {
        block, which by then is much less likely to still be true. */
     [800, 2100, 3300].forEach(function(ms){ setTimeout(attempt, ms); });
 
+    /* Poll until the video is actually playing. Under prefers-reduced-motion
+       the first play() promise can stay pending indefinitely, which leaves
+       the `retrying` latch stuck and blocks every event/timer-driven retry.
+       Clear the latch and re-attempt each tick so we recover regardless. */
+    var poll = setInterval(function(){
+      if(!video.paused){ clearInterval(poll); return; }
+      retrying = false;
+      attempt();
+    }, 400);
+    setTimeout(function(){ clearInterval(poll); }, 8000);
+
     attempt();
     video.addEventListener('loadeddata', attempt);
     video.addEventListener('canplay', attempt);
